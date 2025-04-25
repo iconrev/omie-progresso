@@ -1,0 +1,19 @@
+.badge {
+    &.background {
+        padding: 5px 8px;
+        letter-spacing: 1px;
+
+        &-financeiro {
+            background: rgba(var(--color-financeiro), 1) !important;
+        }
+        &-comercial {
+            background: rgba(var(--color-comercial), 1) !important;
+        }
+        &-processos {
+            background: rgba(var(--color-processos), 1) !important;
+        }
+        &-pessoas {
+            background: rgba(var(--color-pessoas), 1) !important;
+        }
+    }
+}

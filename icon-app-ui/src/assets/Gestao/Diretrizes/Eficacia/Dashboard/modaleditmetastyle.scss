@@ -1,0 +1,19 @@
+.modal-body {
+    table {
+        thead {
+            th {
+                width: 40%;
+
+                &:first-child {
+                    width: 20%;
+                }
+            }
+        }
+
+        input {
+            padding: 0 5px;
+            line-height: 1;
+            height: auto;
+        }
+    }
+}

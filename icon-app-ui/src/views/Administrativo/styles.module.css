@@ -1,0 +1,32 @@
+/* @value color-info: var(--info); */
+
+:export {
+    color-primary: #63c2de;
+    color-success: #4dbd74;
+    color-warning: #ffc107;
+    color-secondary: #c8ced3;
+}
+
+.c-callout {
+    position: relative;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+    border-left: 4px solid #d8dbe0;
+}
+
+.c-callout-primary {
+    border-left-color: var(--primary);
+}
+
+.c-callout-secondary {
+    border-left-color: var(--secondary);
+}
+
+.c-callout-success {
+    border-left-color: var(--success);
+}
+
+.c-callout-warning {
+    border-left-color: var(--warning);
+}

@@ -1,0 +1,13 @@
+comercial:
+  handler: functions/metas.main
+  events:
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):metas}/comercial/{categoria}/definicao
+        method: get
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):metas}/comercial/{categoria}/definicao
+        method: post
+        

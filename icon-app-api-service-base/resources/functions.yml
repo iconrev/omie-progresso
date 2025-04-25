@@ -1,0 +1,376 @@
+gestao:
+  handler: handler.gestao_graficos
+  events:
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diagnostico/grafico
+        method: get
+
+cadastros_usuarios:
+  handler: functions/usuarios.main
+  timeout: 30
+  events:
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/listar/{userId}
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/migrar/usuarios/vincular
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/login
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/login/sso/{token}
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/refreshToken
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/register
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/confirmRegister
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/recover
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/confirmRecover
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/empresas
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/profile
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/profile
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/logo
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/associados/solicitacao
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/associados/solicitacao
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/usuarios/associados/solicitacao/avaliar
+        method: post
+
+cadastros_empresas:
+  handler: functions/empresas.main
+  events:
+    - http:
+        cors: true
+        path: api/cadastros/empresas
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/empresas/cnpj/{cnpj}
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}
+        method: put
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}/detalhes
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}/trial
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}/ativar-premium
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas/usuarios/convite/cancelar # cancelar o convite enviado para um usuário
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas/usuarios/convite/reenviar # reenviar e-mail convite para um usuário
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}/usuarios # usuarios cadastrados para empresa
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}/usuarios/novo # usuarios cadastrados para empresa
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}/usuarios/update # usuarios cadastrados para empresa
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas/{companyId}/usuarios/remove # usuarios cadastrados para empresa
+        method: post
+    - http:
+        cors: true
+        path: api/cadastros/empresas/convites # convites recebidos
+        method: get
+    - http:
+        cors: true
+        path: api/cadastros/empresas/convites/aceite # usuário aceitou o convite para a empresa
+        method: post
+
+gestao_empresa:
+  handler: functions/gestao/empresa.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/download/planilha/{year}/dre
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/download/planilha/{year}/diagnostico
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/upload/planilha
+        method: post
+
+gestao_diagnostico_sobrevicencia:
+  handler: functions/sobrevivencia.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/sobrevivencia/questionario/empresa/{companyId}
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/sobrevivencia/questionario/empresa/{companyId}/avaliacao
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/sobrevivencia/questionario/empresa/{companyId}
+        method: get
+
+swot:
+  handler: functions/swot.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diagnostico/swot
+        method: get
+
+authorizerUserCompany:
+  handler: auth/authorizer.check
+
+admin:
+  handler: functions/admin.main
+  events:
+    - http:
+        cors: true
+        path: api/administrativo/dashboard
+        method: get
+    - http:
+        cors: true
+        path: api/administrativo/associados
+        method: get
+    - http:
+        cors: true
+        path: api/administrativo/usuarios
+        method: get
+    - http:
+        cors: true
+        path: api/administrativo/empresas
+        method: get
+    - http:
+        cors: true
+        path: api/administrativo/empresas/premium
+        method: get
+    - http:
+        cors: true
+        path: api/administrativo/empresas/premium/download
+        method: get
+    - http:
+        cors: true
+        path: api/administrativo/associados/materiais
+        method: post
+    - http:
+        cors: true
+        path: api/administrativo/associados/materiais
+        method: get
+    - http:
+        cors: true
+        path: api/administrativo/logs
+        method: get
+
+associados:
+  handler: functions/associados.main
+  events:
+    - http:
+        cors: true
+        path: api/associados/materiais
+        method: get
+    - http:
+        cors: true
+        path: api/associados/materiais/download/{fileId}
+        method: get
+    - http:
+        cors: true
+        path: api/associados/demo
+        method: get
+
+bot:
+  handler: functions/bot.main
+  events:
+    - http:
+        cors: true
+        path: api/bot
+        method: post
+
+helpers:
+  handler: functions/helpers.main
+  events:
+    - http:
+        cors: true
+        path: api/helpers/company/{companyId}/roles
+        method: get
+
+# crawl:
+#   handler: functions/bot.crawl
+#   events:
+#     - schedule: rate(1 minute)
+#     # - schedule: cron(0 12 * * ? *)
+
+tracker:
+  handler: functions/tracker.main
+  events:
+    - http:
+        path: track/pixel
+        method: get
+        cors: true
+
+email-service:
+ handler: functions/email.main
+ reservedConcurrency: 1
+ events:
+    - sqs:
+        arn:
+          Fn::GetAtt:
+            - EmailServiceSQS
+            - Arn
+
+email-service-sender:
+  handler: functions/email.sender
+  events: 
+    - http:
+        path: api/sqs/teste
+        method: post
+        cors: true
+
+integracao:
+  handler: functions/integracao.omie
+  events: 
+    - http:
+        path: api/cadastros/empresas/{companyId}/integracao/omie
+        method: post
+        cors: true
+    - http:
+        path: api/cadastros/empresas/{companyId}/integracao/omie
+        method: get
+        cors: true
+
+requestReports:
+  handler: functions/reports.main
+  events: 
+    - http:
+        path: api/cadastros/empresas/{companyId}/reports/{reportType}/{year}
+        method: get
+        cors: true
+
+streamService:
+  handler: functions/stream.main
+  timeout: 900
+  events:
+    - stream:
+        type: dynamodb
+        batchSize: 1
+        startingPosition: LATEST
+        arn:
+          Fn::GetAtt:
+            - SimbiosDREIntegrationTable
+            - StreamArn
+
+
+diagnosticoReportsDispatch:
+  handler: functions/reports.dispatcher
+  timeout: 900
+  events:
+    - sns: ${self:custom.snsTopicNameDiagnostico}
+
+
+generateReports:
+  handler: functions/reports.generateReport
+  timeout: 900
+  memorySize: 1024
+#   image:
+#     name: generateReportPuppeteer
+#   runtime: nodejs20.x
+#   runtimeManagement:
+#     mode: manual
+#     arn: arn:aws:lambda:sa-east-1::runtime:d949ec0248c1b8fbc8cbc6df1c986e05fb933506b51d53be82d46f9a37125bea
+  events:
+    - sns: ${self:custom.snsTopicNameReportGenerator}
+
+
+runLocalFunction:
+  handler: functions/reports.generateReport
+  enabled: false
+  events:
+    - http:
+        path: api/runLocalFunction
+        method: post
+
+
+puppeteerGraphs:
+  handler: functions/runPuppeteer.handler
+  enabled: true
+#   timeout: 30
+#   memorySize: 2500
+  events:
+      - http:
+          path: /puppeteerGraphs
+          method: get
+          cors: false
+
+
+getReportData:
+  handler: functions/reports.getReportData
+
+  events:
+      - http:
+          path: /getReport
+          method: get
+          cors: true

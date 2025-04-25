@@ -1,0 +1,74 @@
+service: icon-api-externo-new
+frameworkVersion: ^3.3.0
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage,'qa'}
+  timeout: 20 # optional, in seconds, default is 6
+  region: ${file(config/config.json):${self:provider.stage}.region}
+  lambdaHashingVersion: "20201221"
+  vpc:
+    securityGroupIds: ${file(config/config.json):${self:provider.stage}.vpc_security_gateway}
+    subnetIds: ${file(config/config.json):${self:provider.stage}.vpc_subnet}
+  environment:
+    NODE_ENV: ${self:provider.stage}
+    COGNITO_USER_POOL_ID: ${file(config/config.json):${self:provider.stage}.cognito}
+    COGNITO_USER_POOL_ARN: ${file(config/config.json):${self:provider.stage}.cognito_arn}
+    COGNITO_USER_POOL_REGION: ${file(config/config.json):${self:provider.stage}.cognito_region}
+    COGNITO_CLIENT_ID: ${file(config/config.json):${self:provider.stage}.cognito_client_id}
+    COGNITO_IDENTITY_POOL_ID: ${file(config/config.json):${self:provider.stage}.cognito_identity_pool_id}
+    TABLE_REPORTS_CALL: ${self:custom.tableReportCall}
+    SNS_REPORTS_DIAGNOSTICO:
+      {
+        "Fn::Join":
+          [
+            "",
+            [
+              "arn:aws:sns:${self:provider.region}:",
+              { "Ref": "AWS::AccountId" },
+              ":${self:custom.snsTopicNameDiagnosticoExterno}",
+            ],
+          ],
+      }  
+  apiGateway:
+    shouldStartNameWithService: true
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.TABLE_REPORTS_CALL}"
+        - Effect: "Allow"
+          Action:
+            - SNS:*
+          Resource: "*"    
+
+custom:
+  serverless-offline:
+    httpPort: 4459
+    lambdaPort: 3012
+  tableReportCall: simbiose-reports-${self:provider.stage}
+  snsTopicName: ${self:service}-${self:provider.stage}-topic
+  snsTopicNameDiagnosticoExterno: icon-api-externo-${self:provider.stage}-topic-diagnostico-externo
+
+plugins:
+  - serverless-offline
+  # - serverless-plugin-warmup
+  - serverless-prune-plugin
+  - serverless-disable-functions
+
+functions:
+  - ${file(resources/functions.yml)}
+
+# package:
+#   exclude:
+#     - src/**
+#   include:
+#     - src/config/config.json

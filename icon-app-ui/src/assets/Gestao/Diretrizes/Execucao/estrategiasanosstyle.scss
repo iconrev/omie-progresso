@@ -1,0 +1,192 @@
+.flex {
+    &-basis {
+        &-200 {
+            flex-basis: 200px;
+        }
+    }
+}
+
+.drop {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    > .header {
+        display: flex;
+        padding: 10px 10px 8px 8px;
+        font-size: 15px;
+        font-weight: 500;
+
+        .infos {
+            display: flex;
+            flex: 1;
+        }
+
+        .features {
+            .btn-add-task {
+                padding: 0 8px;
+                border: 0;
+                background-color: transparent;
+            }
+        }
+
+        .badge {
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #ddd;
+            min-width: 22px;
+            max-height: 22px;
+        }
+
+        .title {
+            flex: 1;
+            padding-left: 5px;
+        }
+    }
+
+    .droppable {
+        display: flex;
+        padding: 8px;
+        padding-bottom: 0;
+        width: 100%;
+        min-height: 40px;
+
+        &-row {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        &-col {
+            flex-direction: column;
+        }
+
+        &-dragging-over ~ .header {
+            background-color: lightblue;
+        }
+        &-dragging-over {
+            background-color: lightblue;
+        }
+
+        @media screen and (min-width: 640px) {
+            &-row ~ .header {
+                .title {
+                    flex: unset;
+                    padding: 0 10px 0 5px;
+                }
+            }
+        }
+    }
+
+    .draggable {
+        user-select: "none";
+        padding: 12px;
+        font-weight: 500;
+        color: white;
+        border-radius: 4px;
+        transition: width 1s;
+        cursor: move;
+
+        > .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            max-height: 20px;
+            color: black;
+
+            > div {
+                display: inline-flex;
+            }
+
+            .badge {
+                padding: 0 7px;
+                color: white;
+                letter-spacing: 0.05em;
+                line-height: unset;
+                margin-right: 2px;
+                border-radius: 10px;
+                cursor: default;
+
+                &-financeiro {
+                    background-color: rgba(var(--color-financeiro), 1);
+                }
+                &-comercial {
+                    background-color: rgba(var(--color-comercial), 1);
+                }
+                &-processos {
+                    background-color: rgba(var(--color-processos), 1);
+                }
+                &-pessoas {
+                    background-color: rgba(var(--color-pessoas), 1);
+                }
+
+                &-tasks {
+                    display: flex;
+                    align-items: center;
+                    color: inherit;
+                    min-height: 20px;
+                    background-color: white;
+                }
+            }
+
+            .i-warning {
+                display: flex;
+                align-items: center;
+                padding: 0 5px;
+                min-height: 20px;
+                color: red;
+                font-size: 11px;
+                border-radius: 10px;
+                background-color: white;
+                cursor: default;
+            }
+        }
+
+        div.description {
+            letter-spacing: 0.02em;
+            line-height: 1.25em;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-row {
+            margin: 0 8px 8px 0;
+        }
+        &-col {
+            margin-bottom: 8px;
+            width: 100%;
+        }
+
+        &-financeiro {
+            background-color: rgba(var(--color-financeiro), 1);
+        }
+        &-comercial {
+            background-color: rgba(var(--color-comercial), 1);
+        }
+        &-processos {
+            background-color: rgba(var(--color-processos), 1);
+        }
+        &-pessoas {
+            background-color: rgba(var(--color-pessoas), 1);
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        @media screen and (min-width: 640px) {
+            &-row {
+                width: 205px;
+            }
+        }
+        @media screen and (max-width: 639px) {
+            &-row {
+                margin: 0 0 8px 0;
+            }
+        }
+    }
+}

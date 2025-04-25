@@ -1,0 +1,8 @@
+graficos:
+  handler: functions/graficos.main
+  events:
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):metas}/grafico
+        method: get
+        

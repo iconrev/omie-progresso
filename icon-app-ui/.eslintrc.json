@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "parser": "@babel/eslint-parser",
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    },
+    "ecmaFeatures": {
+      "js": true,
+      "jsx": true,
+      "classes": true,
+      "defaultParams": true
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".js"] }],
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": "warn",
+    "react/no-direct-mutation-state": "warn",
+    "prettier/prettier": "warn",
+    "no-unused-vars": ["warn"],
+    "no-console": "off",
+    "max-classes-per-file": "off",
+    "no-underscore-dangle": ["warn", { "allowAfterThis": true }],
+    "max-len": ["warn", { "code": 120 }],
+    "camelcase": "off",
+    "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }],
+    "no-empty-function": "warn",
+    "no-async-promise-executor": "off"
+  },
+  "extends": ["eslint:recommended", "eslint-config-prettier", "plugin:react/recommended"],
+  "plugins": ["eslint-plugin-prettier", "react", "jsx-a11y", "import"]
+}

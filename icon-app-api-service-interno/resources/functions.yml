@@ -1,0 +1,46 @@
+gestao_diagnostico_interno_financeiro: ${file(resources/functions/financeiro.yml)}
+
+gestao_diagnostico_interno_vendas: ${file(resources/functions/comercial.yml)}
+
+gestao_diagnostico_interno_processos: ${file(resources/functions/processos.yml)}
+
+gestao_diagnostico_interno_pessoas: ${file(resources/functions/pessoas.yml)}
+
+gestao_diagnostico_interno_grafico:
+  handler: functions/grafico.main
+  events:
+    - http: #atualizado
+        cors: true
+        path: api/gestao/{companyId}/diagnostico/interno/avaliacao
+        method: get
+
+# gestao_diagnostico_interno_custos:
+#   handler: functions/custos.main
+#   events:
+#     - http:
+#         cors: true
+#         path: api/gestao/diagnostico/interno/custos/empresa/{companyId}
+#         method: get
+
+import_omie:
+  handler: functions/integracao.import
+  events: 
+    - http:
+        path: api/gestao/{companyId}/diagnostico/interno/financeiro/dados/integracao/omie/{year}
+        method: get
+        cors: true
+
+diagnosticoInternoReportsDispatch:
+  handler: functions/reports.dispatcher
+  timeout: 900
+  events:
+    - sns: ${self:custom.snsTopicNameDiagnosticoInterno}        
+
+
+runLocalFunction:
+  handler: functions/reports.dispatcher
+  enabled: false
+  events:
+    - http:
+        path: api/
+        method: post

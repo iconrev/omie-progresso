@@ -1,0 +1,79 @@
+@import "../dre-levantamento-style.scss";
+
+:root {
+    --color-financeiro: rgba(81, 211, 145, 1);
+    --color-comercial: rgba(97, 183, 219, 1);
+    --color-processos: rgba(158, 130, 241, 1);
+    --color-pessoas: rgba(210, 68, 113, 1);
+}
+
+.row-levantamento-mensal {
+    .col {
+        &.col-description {
+            .row {
+                &.category {
+                    cursor: pointer;
+
+                    &-financeiro::before {
+                        background-color: var(--color-financeiro);
+                    }
+                    &-comercial::before {
+                        background-color: var(--color-comercial);
+                    }
+                    &-processos::before {
+                        background-color: var(--color-processos);
+                    }
+                    &-pessoas::before {
+                        background-color: var(--color-pessoas);
+                    }
+                }
+                &.sub-category {
+                    .col {
+                        &.sub-category {
+                            display: flex;
+                            align-items: center;
+
+                            span:first-child {
+                                flex: 1;
+                            }
+                            span {
+                                &.badge {
+                                    padding: 5px;
+                                    color: white;
+
+                                    &.category {
+                                        &-financeiro {
+                                            background-color: var(--color-financeiro);
+                                        }
+                                        &-comercial {
+                                            background-color: var(--color-comercial);
+                                        }
+                                        &-processos {
+                                            background-color: var(--color-processos);
+                                        }
+                                        &-pessoas {
+                                            background-color: var(--color-pessoas);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            > div:not(.empty) {
+                .row {
+                    min-height: 44px;
+                }
+            }
+        }
+        &.col-months {
+            > div:not(.header-months) {
+                .row {
+                    min-height: 44px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+.dashboard {
+    .actions {
+        .add-company,
+        .refresh-company {
+            font-family: "Roboto", sans-serif;
+            color: white;
+            background-color: gray;
+            border: 0;
+
+            > span {
+                display: block;
+                font-size: 14px !important;
+                font-weight: 900;
+            }
+
+            &:hover {
+                color: white;
+                background-color: grayscale($color: #000000);
+            }
+        }
+
+        .refresh-company {
+            margin-left: 5px;
+        }
+    }
+
+    .card {
+        border-radius: 5px;
+        border: 0;
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+        transition: .3s;
+
+        .card {
+            &-header {
+                display: flex;
+                justify-content: center;
+                padding: 0 0 5px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border: 0;
+
+                .mark {
+                    width: 70%;
+                    min-height: 8px;
+                    border-radius: 0;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    background-color: white;
+                }
+            }
+            &-body {
+                .card-badges {
+                    margin-bottom: 6px;
+
+                    span {
+                        padding: 4px 5px;
+                        letter-spacing: 1px;                                        
+                    }
+                }
+              .widget-user-header {
+
+                  .widget-user-username {
+                    color: white;
+                    text-shadow: 0.1em 0.1em 0.2em black
+                  }
+                  .widget-user-cnpj {
+                    color: white;
+                    text-shadow: 0.1em 0.1em 0.2em black
+                  }
+              }
+            }
+            &-footer {
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border: 0;
+
+                .company-button {
+                    padding: 0;
+                    border: 0;
+                    text-transform: unset;
+                    color: black !important;
+                    background: white !important;
+
+                    &:hover {
+                        background: #f1f1f1 !important;
+                        box-shadow: unset; // 0px 1px 3px rgba(0, 0, 0, .2);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+}

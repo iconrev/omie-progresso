@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "start-qa-local": "AWS_PROFILE=omie@simbiose serverless offline start --stage qa-local --noTimeout",
+    "start-prod-local": "AWS_PROFILE=omie@simbiose serverless offline start --stage prod-local --noTimeout"
+  },
+  "dependencies": {
+    "@types/sequelize": "^4.28.14",
+    "aws-sdk": "^2.1223.0",
+    "axios": "^1.7.7",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.8",
+    "sequelize": "^6.23.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "sequelize-cli": "^6.4.1",
+    "serverless-offline": "^12.0.4",
+    "serverless-prune-plugin": "^2.0.1"
+  }
+}

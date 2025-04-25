@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "start-qa-local": "serverless offline start --stage qa-local --noTimeout",
+    "start-prod-local": "serverless offline start --stage prod-local --noTimeout"
+  },
+  "dependencies": {
+    "@aws-amplify/auth": "^6.3.0",
+    "@sparticuz/chromium-min": "^114.0.0",
+    "@types/lodash": "^4.14.185",
+    "@types/sequelize": "^4.28.14",
+    "aws-amplify": "^6.3.0",
+    "aws-sdk": "^2.1223.0",
+    "axios": "^0.27.2",
+    "ejs": "^3.1.9",
+    "exceljs": "^4.3.0",
+    "handlebars": "^4.7.7",
+    "lodash": "^4.17.21",
+    "mime-types": "^2.1.34",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.3",
+    "node-forge": "^1.3.1",
+    "nodemailer": "^6.7.2",
+    "puppeteer-core": "^22.14.0",
+    "sequelize": "^6.23.1",
+    "utf8": "^3.0.0",
+    "uuid": "^9.0.0",
+    "wkhtmltopdf": "^0.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "sequelize-cli": "^6.6.1",
+    "serverless-disable-functions": "^1.0.0",
+    "serverless-offline": "^12.0.4",
+    "serverless-prune-plugin": "^2.0.1",
+    "webpack": "^5.69.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

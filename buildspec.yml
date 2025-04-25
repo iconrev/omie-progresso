@@ -1,0 +1,13 @@
+version: 0.2
+
+run-as: codebuild-icon
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    run-as: root
+    commands:
+      - npm install -g serverless@3.34.0
+      - chmod +x ./deploy.sh
+      - ./deploy.sh

@@ -1,0 +1,2 @@
+metas: api/gestao/{companyId}/metas
+diretrizes: api/gestao/{companyId}/diretrizes

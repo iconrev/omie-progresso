@@ -1,0 +1,32 @@
+handler: functions/comercial.main
+events:
+    - http: #atualizado
+        path: api/gestao/{companyId}/diagnostico/interno/comercial/gauge
+        method: get
+        cors: true
+        
+    - http: #atualizado
+        path: api/gestao/{companyId}/diagnostico/interno/comercial/avaliacao
+        method: get
+        cors: true
+        
+    - http: #atualizado
+        path: api/gestao/{companyId}/diagnostico/interno/comercial/dados
+        method: get
+        cors: true
+        
+    - http: #atualizado
+        path: api/gestao/{companyId}/diagnostico/interno/comercial/dados
+        method: post
+        cors: true
+        
+    - http: #atualizado
+        path: api/gestao/{companyId}/diagnostico/interno/comercial/avaliacao
+        method: post
+        cors: true
+        
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diagnostico/interno/comercial/detalhes
+        method: get
+        

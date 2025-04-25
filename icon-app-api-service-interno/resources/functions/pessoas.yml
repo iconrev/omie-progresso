@@ -1,0 +1,32 @@
+handler: functions/pessoas.main
+events:
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/pessoas/gauge
+          method: get
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/pessoas/avaliacao
+          method: get
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/pessoas/avaliacao
+          method: post
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/pessoas/dados
+          method: get
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/pessoas/dados
+          method: post
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/pessoas/dados/categoria
+          method: put
+          

@@ -1,0 +1,25 @@
+#header {
+    background-color: #005795;
+    border: #002540;
+  }
+  
+  .form_login {
+    margin-top: 10px;
+    font-size: 12px;
+    position: relative;
+    line-height: 34px;
+    color: wh;
+    margin-top: 8px;
+  }
+
+
+.all{
+  padding: 5.6em 1em 1em 1em;
+  width: 100%;
+}
+
+#main {
+  margin: auto;
+  max-width: 958px;
+  height: 100%; 
+}

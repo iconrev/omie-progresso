@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌lic,400italic,500,500italic,700,700italic,900italic,900");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+:root {
+  --color-financeiro: 81, 211, 145;
+  --color-comercial: 97, 183, 219;
+  --color-processos: 158, 130, 241;
+  --color-pessoas: 210, 68, 113;
+  --dark: #2f353a;
+}
+
+.company-title {
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-family: "Roboto", sans-serif;
+}
+
+.company-button {
+  background: #599bb3 linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  border-radius: 4px;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  color: #ffffff !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+  margin-top: 3px;
+  float: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-shadow: transparent 0.1em 0.1em 0.2em;
+}
+
+.company-button:hover {
+  box-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.imageLogo {
+  margin-top: -28px !important;
+}
+
+.container-dashboard {
+  margin: 0 !important;
+}
+
+.dashboard-deck .card {
+  /*min-width: 350px;*/
+  /*max-width: 450px;*/
+  margin-bottom: 25px !important;
+}
+
+.dashboard-deck .company-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block !important;
+}
+
+.dashboard-deck .card .btn {
+  padding: 0 !important;
+  text-align: center;
+}
+
+.modal-swot {
+  max-width: 75% !important;
+}
+
+.cenario-swot {
+  min-height: 300px !important;
+  margin-top: 100px !important;
+  height: 100% !important;
+}
+
+.cenario-swot-icon {
+  margin: auto !important;
+  padding: 0 !important;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50%;
+}
+
+.icon-avatar {
+  margin: auto !important;
+  display: table-cell !important;
+  float: none !important;
+  border: 0;
+  z-index: 5;
+  color: white;
+}
+
+.cenario-line {
+  height: 200px;
+  width: 2%;
+  background-color: black;
+  margin: auto !important;
+  position: absolute !important;
+  top: 20px;
+  left: 49%;
+  z-index: 0;
+  border-bottom: 100px !important;
+}
+
+.cenario-swot-title {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  padding: 3px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Bangers", cursive;
+  font-size: 30px;
+}
+
+.cenario-swot-title-label {
+  z-index: 5;
+}
+
+.cenario-swot-container-item {
+}
+
+.cenario-swot-item-text {
+  font-family: "Roboto", cursive;
+  width: 100%;
+  padding: 5px;
+}
+
+.border-ameacas {
+  border-bottom: 2px solid #9e82f1;
+}
+
+.border-oportunidades {
+  border-bottom: 1px solid #61b7db;
+}
+
+.border-fraqueza {
+  border-bottom: 2px solid #bda7ba;
+}
+
+.border-forca {
+  border-bottom: 1px solid #51d391;
+}
+
+.color-body {
+  background-color: #e2e2e2;
+  border: 0 !important;
+  padding: 0;
+}
+
+.color-footer {
+  background-color: #9c9c9c;
+  border: 0 !important;
+  height: 60px !important;
+}
+
+.modal-backdrop {
+  opacity: 0.9 !important;
+}
+
+.align-center-all {
+  text-align: center;
+}
+
+.emoji-div {
+  height: 50px;
+  line-height: 50px;
+  display: table;
+}
+
+
+@font-face {
+  font-family: 'Noto Color Emoji';
+  src: url("https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf");
+}
+
+.emoji-symbol {
+  height: auto;
+  font-size: 25px;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Noto Color Emoji';
+}
+
+.emoji-text {
+  padding-left: 10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hover-zoom {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.hover-zoom:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.pagination > li.active-dark > button {
+  background: var(--dark) !important;
+  color: #fff !important;
+}

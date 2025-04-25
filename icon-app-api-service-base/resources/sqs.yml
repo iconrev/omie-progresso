@@ -1,0 +1,6 @@
+Resources:
+  EmailServiceSQS:
+    Type: "AWS::SQS::Queue"
+    Properties:
+      QueueName: ${self:custom.sqs-email-service}
+      FifoQueue: true

@@ -1,0 +1,106 @@
+{
+  "name": "simbiose",
+  "version": "3.0.0",
+  "description": "Omie S/A",
+  "homepage": ".",
+  "copyright": "Copyright 2020-2022 Omie S/A",
+  "license": "https://omie.com.br",
+  "private": true,
+  "dependencies": {
+    "@coreui/coreui": "^3.3.0",
+    "@coreui/coreui-pro": "^2.1.14",
+    "@coreui/icons": "^0.3.0",
+    "@coreui/react": "^2.5.1",
+    "aws-amplify": "^4.3.36",
+    "axios": "0.27.2",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
+    "chroma-js": "^2.1.0",
+    "classnames": "^2.2.6",
+    "core-js": "^3.1.4",
+    "date-fns": "^2.20.3",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "flag-icon-css": "^3.3.0",
+    "font-awesome": "^4.7.0",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.33",
+    "prop-types": "^15.7.2",
+    "qs": "^6.10.5",
+    "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.1",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-bootstrap-table": "4.3.1",
+    "react-bootstrap-table-next": "^4.0.3",
+    "react-bootstrap-table2-editor": "^1.4.0",
+    "react-chartjs-2": "^2.7.6",
+    "react-datepicker": "^3.6.0",
+    "react-dom": "^16.12.0",
+    "react-gauge-chart": "^0.2.5",
+    "react-input-mask": "^2.0.4",
+    "react-intl": "^5.17.5",
+    "react-number-format": "^4.4.1",
+    "react-password-strength-bar": "^0.4.1",
+    "react-router-dom": "^5.0.1",
+    "react-select": "^3.1.0",
+    "react-text-mask-hoc": "^0.11.0",
+    "react-time-ago": "^6.2.2",
+    "react-toastify": "^5.2.1",
+    "reactstrap": "^8.0.0",
+    "sass": "^1.55.0",
+    "simple-line-icons": "^2.5.2",
+    "spinkit": "1.2.5",
+    "text-mask-addons": "^3.8.0",
+    "use-local-storage-state": "^17.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "prettier": "^2.6.2",
+    "react-scripts": "^5.0.1",
+    "serverless-prune-plugin": "^2.0.1",
+    "serverless-s3-sync": "^3.0.0"
+  },
+  "scripts": {
+    "start": "export NODE_ENV=qa && export REACT_APP_STAGE=qa && export PORT=4001 && react-scripts start",
+    "start-qa": "export NODE_ENV=qa && export REACT_APP_STAGE=qa && export PORT=4001 && react-scripts start",
+    "start-prod": "export NODE_ENV=prod && export REACT_APP_STAGE=prod && export PORT=4001 && react-scripts start",
+    "start-qa-local": "export NODE_ENV=qa-local && export REACT_APP_STAGE=qa-local && export PORT=4001 && react-scripts start",
+    "start-prod-local": "export NODE_ENV=prod-local && export REACT_APP_STAGE=prod-local && export PORT=4001 && react-scripts start",
+    "build": "react-scripts build",
+    "build-qa": "react-scripts build",
+    "build-prod": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "bugs": {
+    "url": "https://github.com/omiexperience/omie-progresso/issues"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/*index.js",
+      "!src/serviceWorker.js",
+      "!src/polyfill.js"
+    ]
+  },
+  "engines": {
+    "node": ">=8.10",
+    "npm": ">=6"
+  }
+}

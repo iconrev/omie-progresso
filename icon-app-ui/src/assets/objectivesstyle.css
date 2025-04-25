@@ -1,0 +1,124 @@
+:root {
+  --color-financeiro: 81, 211, 145;
+  --color-comercial: 97, 183, 219;
+  --color-processos: 158, 130, 241;
+  --color-pessoas: 210, 68, 113;
+}
+
+.container-tabs-render {
+  margin-top: 15px;
+}
+
+.tab-pane-margin {
+  padding: 0 1rem 1rem 1rem !important;
+}
+
+.zoom-card {
+  background: #fff;
+  float: left;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 0 0 0;
+
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 1px rgba(0,0,0.9,0.5);
+
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -ms-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+.zoom-card:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.map-card {
+  padding: 5px 10px 10px 10px !important;
+  text-align: center !important;
+  border-radius: 25px !important;
+  margin-top: 20px;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.map-card-icon {
+  font-size: 2.125em;
+  font-weight: 300;
+  margin: 0.15em;
+  background-color: white !important;
+  z-index: 999;
+}
+
+.map-card-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff !important;
+  font-size: 2em;
+  font-family: 'Bangers', cursive;
+  padding: 1px;
+}
+
+.map-card-objetivo {
+  margin: 0.35em;
+  font-style: italic;
+  font-weight: 400;
+  color: black !important;
+}
+
+.map-card-container-meta {
+  margin: 5px 0 10px 0;
+}
+
+.map-card-meta-value {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.map-card-meta-text {
+  color: black !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.background-financeiro {
+  background: rgb(var(--color-financeiro)) !important;
+}
+
+.color-financeiro {
+  color: rgb(var(--color-financeiro)) !important;
+}
+
+.background-comercial {
+  background: rgb(var(--color-comercial)) !important;
+}
+
+.color-comercial {
+  color: rgb(var(--color-comercial)) !important;
+}
+
+.background-processos {
+  background: rgb(var(--color-processos)) !important;
+}
+
+.color-processos {
+  color: rgb(var(--color-processos)) !important;
+}
+
+.background-pessoas {
+  background: rgb(var(--color-pessoas)) !important;
+}
+
+.color-pessoas {
+  color: rgb(var(--color-pessoas)) !important;
+}

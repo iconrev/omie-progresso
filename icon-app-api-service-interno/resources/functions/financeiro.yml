@@ -1,0 +1,32 @@
+handler: functions/financeiro.main
+events:
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/financeiro/gauge
+          method: get
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/financeiro/avaliacao
+          method: get
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/financeiro/avaliacao
+          method: post
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/financeiro/dados
+          method: get
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/financeiro/dados
+          method: post
+          
+    - http:
+          cors: true
+          path: api/gestao/{companyId}/diagnostico/interno/financeiro/dados/categoria
+          method: put
+          

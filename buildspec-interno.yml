@@ -1,0 +1,34 @@
+version: 0.2
+
+env:
+  variables:
+    SERVICE: "api-service-interno"
+    PROJECT_NAME: "icon-app"
+    STAGE: "qa"
+
+phases: 
+  install:
+    runtime-versions:
+      nodejs: 16
+    on-failure: ABORT
+    commands:
+      - export BUILD_DIR=$(pwd)
+      - export SERVICE_DIR=$BUILD_DIR/$PROJECT_NAME-$SERVICE
+      - npm install -g serverless@3.34.0
+      - cd $SERVICE_DIR && npm install
+
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - mkdir -p $SERVICE_DIR/config
+      - cp $BUILD_DIR/config/config.json $SERVICE_DIR/config/config.json
+      - mkdir -p $SERVICE_DIR/libs
+      - cp -r $BUILD_DIR/icon-api-libs/* $SERVICE_DIR/libs/
+      
+  build:
+    on-failure: ABORT
+    commands:
+      - cd $SERVICE_DIR
+      - serverless prune -n 3 --region sa-east-1 --stage $STAGE
+      - serverless deploy --verbose --region sa-east-1 --stage $STAGE
+

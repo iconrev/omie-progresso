@@ -1,0 +1,24 @@
+dev:
+  domainName: ""
+  zoneName: ""
+  hostZoneId: ""
+  certificateName: ""
+  cloudfrontId: ""
+  AcmCertificateArn: ""
+
+qa:
+  domainName: ""
+  zoneName: ""
+  hostZoneId: ""
+  certificateName: ""
+  cloudfrontId: ""
+  AcmCertificateArn: ""
+
+prod:
+  domainName: ""
+  zoneName: ""
+  hostZoneId: ""
+  certificateName: ""
+  cloudfrontId: ""
+  AcmCertificateArn: ""
+

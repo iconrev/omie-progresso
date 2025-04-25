@@ -1,0 +1,22 @@
+Resources:
+  ReportBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ${self:custom.relatorios-diagnostico-bucket}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true        
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders: ['*']
+            AllowedMethods: [GET]
+            AllowedOrigins: ['*']
+            MaxAge: 3000
+      LifecycleConfiguration: 
+        Rules:
+          - Id: DocumentListRule
+            Prefix: report
+            Status: Enabled
+            ExpirationInDays: 1

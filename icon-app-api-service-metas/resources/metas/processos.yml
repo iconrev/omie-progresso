@@ -1,0 +1,13 @@
+processos:
+  handler: functions/metas.main
+  events:
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):metas}/processos/{categoria}/definicao
+        method: get
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):metas}/processos/{categoria}/definicao
+        method: post
+        

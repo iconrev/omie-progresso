@@ -1,0 +1,840 @@
+<style id="Page Size">
+    .page {
+        width:  30.0cm;
+        height: 40.0cm;
+        /* border: solid; */
+        margin-bottom: 10cm;
+     /* change the margins as you want them to be. */
+}
+
+</style>
+
+<style id="bar graph">
+    .barchart-Wrapper {
+      display: table;
+      position: relative;
+      margin: 20px 0;
+      height: 300px;
+    }
+  
+    .barChart-Container {
+      display: table-cell;
+      width: 100%;
+      height: 100%;
+      padding-left: 15px;
+    }
+  
+    .barchart {
+      display: table;
+      table-layout: fixed;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid tomato;
+    }
+  
+    .barchart-Col {
+      position: relative;
+      vertical-align: bottom;
+      display: table-cell;
+      height: 100%;
+    }
+  
+    .barchart-Col+.barchart-Col {
+      border-left: 4px solid transparent;
+    }
+  
+    .barchart-Bar {
+      position: relative;
+      height: 0;
+      transition: height 0.5s 2s;
+      width: 66px;
+      margin: auto;
+    }
+  
+    .barchart-Bar:after {
+      content: attr(attr-height);
+      color: white;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .barchart-BarFooter {
+      position: absolute;
+      text-align: center;
+      height: 10%;
+      width: 100%;
+    }
+  
+    .barchart-BarFooter h3 {
+      color: darkred;
+    }
+  
+    .barchart-TimeCol {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .barchart-Time {
+      height: 10%;
+      vertical-align: middle;
+      position: relative;
+    }
+  
+    .barchart-Time:after {
+      border-bottom: 3px solid black;
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0em;
+    }
+  
+    .barchart-TimeText {
+      position: absolute;
+      top: -8px;
+      z-index: 1;
+      background: white;
+      padding-right: 5px;
+      color: #4d4d4d;
+      font-size: 15px;
+      font-family: 'Avenir Medium';
+    }
+  
+    .preco-bar {
+      background-color: deepskyblue;
+    }
+  
+    .qualidade-bar {
+      background-color: greenyellow;
+    }
+  
+    .entrega-bar {
+      background-color: peachpuff;
+    }
+  
+    .inovacao-bar {
+      background-color: darkolivegreen;
+    }
+  
+    .portifolio-bar {
+      background-color: cornflowerblue;
+    }
+  </style>
+
+<style id="gouge">
+
+    .sc-gauge  { width:200px; height:200px; margin:200px auto; }
+    .sc-background { position:relative; height:100px; margin-bottom:10px; background-color: gray; border-radius:150px 150px 0 0; overflow:hidden; text-align:center; }
+    .sc-mask { position:absolute; top:20px; right:20px; left:20px; height:80px; background-color:white; border-radius:150px 150px 0 0 }
+    .sc-percentage { position:absolute; top:100px; left:-200%; width:400%; height:400%; margin-left:100px; background-color: deepskyblue; }
+    .sc-percentage { transform:rotate(90deg); transform-origin:top center; }
+    .sc-min { float:left; }
+    .sc-max { float:right; }
+    .sc-value { position:absolute; top:50%; left:0; width:100%;  font-size:30px; font-weight:700 }
+    </style>
+
+
+<div class="page">
+
+<h3>
+    <p class="card-header header"><b>Relatório de diagnóstico</b> - Sobrevivência</p>
+</h3>
+<div class="card-body">
+    <h1 class="card-title"><b>Respostas</b></h1>
+    <h2>
+        <%= year %>
+    </h2>
+    <table class="table">
+        <tr>
+            <td><b>Descrição</b></td>
+            <td><b>Resposta</b></td>
+        </tr>
+        <% data.survival[year].forEach(function(questionnaire){ %>
+            <tr>
+                <td><%- questionnaire.descricao %></td>
+                <td><%- questionnaire.resposta %></td>
+            </tr>
+            <% }); %>
+    </table>
+</div>
+</div>
+
+
+<% ["concorrentes", "clientes" , "fornecedores" ].forEach(function(diagno_extern){ %>
+
+    <div class="page">
+
+<div class="animated fadeIn">
+        <div class="card-accent-warning card">
+            <div class="card-header">
+                <div class="align-items-center row">
+                    <div class="col"><strong>Diagnóstico de Ambiente Externo</strong> - <%- diagno_extern.toUpperCase()
+                            %></div>
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="react-bs-table-container">
+                    <div class="react-bs-table react-bs-table-bordered" style="height: 100%;">
+                        <div class="react-bs-container-header table-header-wrapper">
+                            <table class="table table-hover table-bordered">
+                                <colgroup>
+                                    <col style="display: none;">
+                                    <col style="width: 30%; min-width: 30%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="" data-is-only-head="false" title="Id" data-field="id"
+                                            style="text-align: left; display: none;">Id<div></div>
+                                        </th>
+                                        <th class="" data-is-only-head="false" data-field="concorrente"
+                                            style="text-align: left;">
+                                            <div class="align-items-center row">
+                                                <div class="col"><%- diagno_extern.toUpperCase() %></div>
+                                                <div class="col"></div>
+                                            </div>
+                                            <div></div>
+                                        </th>
+                                        <th class="" data-is-only-head="false" data-field="preco"
+                                            style="text-align: left;">
+                                            <div class="align-items-center row">
+                                                <div class="col">Preço</div>
+                                                <div class="col"><span
+                                                        class="badge-warning float-right badge badge-secondary"><%- data.externo[diagno_extern].media_competitividade[year].media_preco %>
+                                                        %</span></div>
+                                            </div>
+                                            <div></div>
+                                        </th>
+                                        <th class="" data-is-only-head="false" data-field="qualidade"
+                                            style="text-align: left;">
+                                            <div class="align-items-center row">
+                                                <div class="col">Qualidade</div>
+                                                <div class="col"><span
+                                                        class="badge-warning float-right badge badge-secondary"><%- data.externo[diagno_extern].media_competitividade[year].media_qualidade %>
+                                                        %</span></div>
+                                            </div>
+                                            <div></div>
+                                        </th>
+                                        <th class="" data-is-only-head="false" data-field="entrega"
+                                            style="text-align: left;">
+                                            <div class="align-items-center row">
+                                                <div class="col">Entrega</div>
+                                                <div class="col"><span
+                                                        class="badge-warning float-right badge badge-secondary"><%- data.externo[diagno_extern].media_competitividade[year].media_entrega %>
+                                                        %</span></div>
+                                            </div>
+                                            <div></div>
+                                        </th>
+                                        <th class="" data-is-only-head="false" data-field="inovacao"
+                                            style="text-align: left;">
+                                            <div class="align-items-center row">
+                                                <div class="col">Inovação</div>
+                                                <div class="col"><span
+                                                        class="badge-danger float-right badge badge-secondary"><%- data.externo[diagno_extern].media_competitividade[year].media_inovacao %>
+                                                        %</span></div>
+                                            </div>
+                                            <div></div>
+                                        </th>
+                                        <th class="" data-is-only-head="false" data-field="portifolio"
+                                            style="text-align: left;">
+                                            <div class="align-items-center row">
+                                                <div class="col">Portifólio</div>
+                                                <div class="col"><span
+                                                        class="badge-warning float-right badge badge-secondary"><%- data.externo[diagno_extern].media_competitividade[year].media_portifolio %>
+                                                        %</span></div>
+                                            </div>
+                                            <div></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="react-bs-container-body" style="height: 100%;">
+                            <table class="table table-striped table-bordered table-hover">
+                                <colgroup>
+                                    <col style="display: none;">
+                                    <col style="width: 30%; min-width: 30%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                    <col style="width: 14%; min-width: 14%;">
+                                </colgroup>
+                                <tbody>
+
+
+
+
+
+                                    <% data.externo[diagno_extern][year].forEach(function(AE){ %>
+
+                                        <div hidden><%- vish={"concorrentes": "concorrente" , "clientes" : "cliente"
+                                                , "fornecedores" : "fornecedor" } %></div>
+                                        <tr class="">
+                                            <td tabindex="1" class="" style="text-align: left; display: none;"><%- AE.id
+                                                    %></td>
+                                            <td tabindex="2" class="" style="text-align: left;"><%-
+                                                    AE[vish[diagno_extern]] %>
+                                            </td>
+                                            <td tabindex="3" class="" style="text-align: left;"><%- AE.preco %></td>
+                                            <td tabindex="4" class="" style="text-align: left;"><%- AE.qualidade %>
+                                            </td>
+                                            <td tabindex="5" class="" style="text-align: left;"><%- AE.entrega %></td>
+                                            <td tabindex="6" class="" style="text-align: left;"><%- AE.inovacao %></td>
+                                            <td tabindex="7" class="" style="text-align: left;"><%- AE.portifolio %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="s-alert-wrapper"></div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="align-items-center row">
+                    <div class="col">
+                        <h5 class="p-0 m-0">Seu nível de competitividade final: <span
+                                class="badge-warning badge badge-secondary"><%- data.externo[diagno_extern].media_competitividade[year].competitividade %> %</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="animated fadeIn">
+                <div class="card-accent-danger card">
+                    <div class="card-header"><strong>SWOT</strong> - <%- diagno_extern.toUpperCase() %></div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="react-bootstrap-table">
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th tabindex="0" style="height: 70px; vertical-align: middle;">
+                                                    Oportunidades
+                                                </th>
+                                                <th tabindex="0"
+                                                    style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                                    Atratividade da Oportunidade</th>
+                                                <th tabindex="0"
+                                                    style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                                    Prob. de Sucesso da Oportunidade</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+
+
+                                            <% data.externo[diagno_extern].swot[year].forEach(function(concorrente){ %>
+
+                                                <tr style="height: 70px; vertical-align: middle;">
+                                                    <td><%- concorrente.oportunidadeId %></td>
+                                                    <td style="text-align: center;"><%-
+                                                            concorrente.atratividade_da_oportunidade %></td>
+                                                    <td style="text-align: center;"><%-
+                                                            concorrente.probabilidade_de_sucesso_da_oportunidade %></td>
+                                                </tr>
+                                                <% }); %>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="react-bootstrap-table">
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th tabindex="0" style="height: 70px; vertical-align: middle;">Ameaças</th>
+                                                <th tabindex="0"
+                                                    style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                                    Relevância da Ameaça</th>
+                                                <th tabindex="0"
+                                                    style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                                    Prob. de Ocorrer a Ameaça</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <% data.externo[diagno_extern].swot[year].forEach(function(concorrente){ %>
+
+                                                <tr style="height: 70px; vertical-align: middle;">
+                                                    <td><%- concorrente.ameacaId %></td>
+                                                    <td style="text-align: center;"><%- concorrente.relevancia_da_ameaca
+                                                            %></td>
+                                                    <td style="text-align: center;"><%-
+                                                            concorrente.probabilidade_de_ocorrer_a_ameaca %></td>
+                                                </tr>
+                                                <% }); %>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<div class="barchart-Wrapper">
+    <div class="barchart-TimeCol">
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">100</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">90</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">80</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">70</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">60</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">50</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">40</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">30</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">20</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">10</span>
+      </div>
+
+    </div>
+
+    <div class="barChart-Container">
+      <div class="barchart">
+        <div class="barchart-Col">
+          <!-- <div class="barchart-Bar preco-bar" style="height: 99%;"></div> -->
+          <div class="barchart-Bar preco-bar" style="height: <%= data.externo[diagno_extern].media_competitividade[year].media_preco %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3>Preço</h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div class="barchart-Bar qualidade-bar" style="height: <%= data.externo[diagno_extern].media_competitividade[year].media_qualidade %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3>Qualidade</h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div class="barchart-Bar entrega-bar" style="height: <%= data.externo[diagno_extern].media_competitividade[year].media_entrega %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3>Entrega</h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div id="uia" class="barchart-Bar inovacao-bar" style="height: <%= data.externo[diagno_extern].media_competitividade[year].media_inovacao %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3>Inovação</h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div class="barchart-Bar portifolio-bar" style="height: <%= data.externo[diagno_extern].media_competitividade[year].media_portifolio %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3>Portifólio</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<% }); %>
+
+
+<div class="page">
+<div class="card-accent-danger card">
+            <div class="card-header"><strong>SWOT</strong> - Macro Ambiente</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="react-bootstrap-table">
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th tabindex="0" style="height: 70px; vertical-align: middle;">Fatores</th>
+                                        <th tabindex="0"
+                                            style="width: 50%; height: 70px; vertical-align: middle; text-align: center;">
+                                            Tendência</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% data.externo.macros[year].forEach(function(macro){ %>
+                                        <tr style="height: 70px; vertical-align: middle;">
+                                            <td><%- macro.fator %></td>
+                                            <td style="text-align: center;"><%- macro.tendencia %></td>
+                                        </tr>
+                                        <% }); %>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="react-bootstrap-table">
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th tabindex="0" style="height: 70px; vertical-align: middle;">Oportunidades
+                                        </th>
+                                        <th tabindex="0"
+                                            style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                            Atratividade da Oportunidade</th>
+                                        <th tabindex="0"
+                                            style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                            Prob. de Sucesso da Oportunidade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% data.externo.macros[year].forEach(function(macro){ %>
+
+
+                                        <tr style="height: 70px; vertical-align: middle;">
+                                            <td><%- macro.oportunidadeId %></td>
+                                            <td style="text-align: center;"><%- macro.fator %></td>
+                                            <td style="text-align: center;"><%- macro.fator %></td>
+                                        </tr>
+                                        <% }); %>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="react-bootstrap-table">
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th tabindex="0" style="height: 70px; vertical-align: middle;">Ameaças</th>
+                                        <th tabindex="0"
+                                            style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                            Relevância da Ameaça</th>
+                                        <th tabindex="0"
+                                            style="width: 20%; height: 70px; vertical-align: middle; text-align: center;">
+                                            Prob. de Ocorrer a Ameaça</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% data.externo.macros[year].forEach(function(macro){ %>
+
+                                        <tr style="height: 70px; vertical-align: middle;">
+                                            <td><%- macro.ameacaId %></td>
+                                            <td style="text-align: center;"><%- macro.relevancia_da_ameaca %></td>
+                                            <td style="text-align: center;"><%- macro.probabilidade_de_ocorrer_a_ameaca
+                                                    %></td>
+                                        </tr>
+
+                                        <% }); %>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+</div>
+
+<div class="barchart-Wrapper">
+    <div class="barchart-TimeCol">
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">100</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">90</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">80</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">70</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">60</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">50</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">40</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">30</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">20</span>
+      </div>
+      <div class="barchart-Time">
+        <span class="barchart-TimeText">10</span>
+      </div>
+
+    </div>
+
+    <div class="barChart-Container">
+      <div class="barchart">
+        <div class="barchart-Col">
+          <!-- <div class="barchart-Bar preco-bar" style="height: 99%;"></div> -->
+          <div class="barchart-Bar preco-bar" style="height: <%= data.externo.macros.macro_avaliacao[year].fatores[0].media %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3><%= data.externo.macros.macro_avaliacao[year].fatores[0].fator %></h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div class="barchart-Bar qualidade-bar" style="height: <%= data.externo.macros.macro_avaliacao[year].fatores[1].media %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3><%= data.externo.macros.macro_avaliacao[year].fatores[1].fator %></h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div class="barchart-Bar entrega-bar" style="height: <%= data.externo.macros.macro_avaliacao[year].fatores[2].media %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3><%= data.externo.macros.macro_avaliacao[year].fatores[2].fator %></h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div id="uia" class="barchart-Bar inovacao-bar" style="height: <%= data.externo.macros.macro_avaliacao[year].fatores[3].media %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3><%= data.externo.macros.macro_avaliacao[year].fatores[3].fator %></h3>
+          </div>
+        </div>
+        <div class="barchart-Col">
+          <div class="barchart-Bar portifolio-bar" style="height: <%= data.externo.macros.macro_avaliacao[year].fatores[4].media %>%;"></div>
+          <div class="barchart-BarFooter">
+            <h3><%= data.externo.macros.macro_avaliacao[year].fatores[4].fator %></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+<%
+const formatter = (value, decimals = 2) => {
+	if (value) {
+		try {
+			return parseFloat(value)
+				.toFixed(decimals)
+				.replace(".", ",")
+				.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+		} catch (error) {
+			console.error(error);
+		}
+	} else {
+		if (decimals === 0) {
+			return "0";
+		} else {
+			return "0,00";
+		}
+	}
+};
+%>
+
+<% ["analiseFinanceiro", "analiseComercial", "analiseProcessos", "analisePessoas" ].forEach(function(diagno_interno){ %>
+
+    <div class="page">
+
+<div hidden><%- analise_body=data.interno[diagno_interno][year] %></div>
+
+
+<div class="card-accent-warning card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-sm-auto"><strong>Diagnóstico de Ambiente Interno</strong> - Análise de Desempenho
+                   - <%- data.interno_col_analise[diagno_interno].title %> - <span class="text-muted text-uppercase font-weight-bold font-xs">2023</span></div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div>
+                <div class="row">
+                    <div class="col-4" style=" width: 100%; height: auto;">
+                        <div class="callout callout-success" style=" width: 100%; height: auto;"><span class="h5">Análise</span></div>
+                    </div>
+                    <div class="col-4">
+                        <div class="callout callout-success" style=" width: 100%; height: auto;"><span class="h5">Resultado</span></div>
+                    </div>
+                    <div class="col-4">
+                        <div class="callout callout-success" style=" width: 100%; height: auto;"><span class="h5">Classificação</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <% for (const [index, line] of Object.entries(data.interno_col_analise[diagno_interno].lines)){ %>
+
+            <div class="pb-2 pb-2">
+                <div class="pb-2 pt-2 row">
+                    <div class="col-4">
+
+                            <span class="badge badge-<%= line.color %>">
+                                <strong style="font-size: 14px;"><%- line.title %></strong>
+                            </span>
+
+                    
+                    </div>
+                </div>
+
+                <% for (const [i, subline] of Object.entries(line.sublines)){ %>
+
+
+                <div class="pb-2 pt-2 row" style=" width: 100%; height: auto;">
+                    <div class="align-self-center pb-2 col-4"><span
+                            class="mr-2"><i class="icon-warning"
+                                id="tipItem0smile_receita_bruta"></i></span><span><%- subline.name %></span></div>
+                    <div class="align-self-center col-4">
+                        <div hidden><%- number_values=analise_body[subline.result_key] %></div>
+
+                        <% if (!number_values && diagno_interno === "analiseComercial"){ %>
+                            <div hidden><%- number_values=analise_body.vendas[subline.result_key] %></div>
+                        <% }; %>
+
+                        <% if (!number_values && diagno_interno === "analiseProcessos"){ %>
+                            <div hidden><%- number_values=analise_body.processos[subline.result_key] %></div>
+                        <% }; %>
+
+                        <% if (!number_values && diagno_interno === "analisePessoas"){ %>
+                            <div hidden><%- number_values=analise_body.pessoas[subline.result_key] %></div>
+                        <% }; %>
+
+
+
+                        <% if (subline.unity === "real"){ %>
+                            <span class="h6">R$ <%- formatter(number_values) %> </span></div>
+                        <% }; %>
+
+
+
+
+                        <% if (subline.unity === "percent"){ %>
+                            <span class="h6"> <%- formatter(number_values) %> %</span></div>
+                        <% }; %>
+
+
+
+
+
+
+                        <% if (subline.unity === "float"){ %>
+                            <span class="h6"> <%- formatter(number_values) %> </span></div>
+                        <% }; %>
+
+
+
+
+
+
+                        <% if (subline.unity === "unity"){ %>
+                            <span class="h6"> <%- formatter(number_values) %> </span></div>
+                        <% }; %>
+
+
+
+
+
+                        <% if (analise_body.smiles){ %>
+                            <div hidden><%- avaliacao_result=analise_body.smiles[subline.classification_key] %></div>
+                        <% }; %>
+
+                        <% if (analise_body.avaliacao){ %>
+                            <div hidden><%- avaliacao_result=analise_body.avaliacao[subline.classification_key] %></div>
+                        <% }; %>
+
+
+
+                            <div class="align-center col-4" style=" width: 100%; height: auto;">
+                                <div class="p-0 m-0 form-group">
+                                    <div class=" css-2b097c-container">
+                                        <div class=" css-yk16xz-control">
+                                            <div class=" css-1hwfws3">
+                                                <div class=" css-1uccc91-singleValue">
+                                                    <div class="emoji-div"><span class="emoji-symbol" role="img"
+                                                            aria-label="frowning face" aria-hidden="false">-</span> <span
+                                                            class="emoji-text"><%- avaliacao_result %></span></div>
+                                                </div>
+                                                <div class="css-1g6gooi">
+                                                    <div class="" style="display: inline-block;"><input
+                                                            autocapitalize="none" autocomplete="off" autocorrect="off"
+                                                            id="react-select-35-input" spellcheck="false" tabindex="0"
+                                                            type="text" aria-autocomplete="list" value=""
+                                                            style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;">
+                                                        <div
+                                                            style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+
+
+                </div>
+
+
+                <% }; %>
+
+            </div>
+
+
+            <% }; %>
+        </div>
+        <div class="card-footer"></div>
+</div>
+
+<%
+let angleDeg = 180
+let percentFactor = data.interno[diagno_interno].media_gauge[year].percentual / 100
+
+const valueDeg = angleDeg * percentFactor
+
+
+%>
+
+<%- data.interno[diagno_interno].media_gauge[year].html %>
+
+
+</div>
+
+<% }); %>

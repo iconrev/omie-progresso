@@ -1,0 +1,36 @@
+ARG FUNCTION_DIR="/function"
+
+FROM node:20-buster AS build-image
+
+ARG FUNCTION_DIR
+
+RUN apt-get update && \
+    apt-get install -y \
+    g++ \
+    make \
+    cmake \
+    unzip \
+    libcurl4-openssl-dev
+
+RUN mkdir -p ${FUNCTION_DIR}
+COPY . ${FUNCTION_DIR}
+
+WORKDIR ${FUNCTION_DIR}
+
+RUN npm install
+
+RUN npm install aws-lambda-ric
+
+FROM node:20-buster-slim
+
+ENV NPM_CONFIG_CACHE=/tmp/.npm
+
+ARG FUNCTION_DIR
+
+WORKDIR ${FUNCTION_DIR}
+
+COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
+
+ENTRYPOINT ["/usr/local/bin/npx", "aws-lambda-ric"]
+
+CMD ["reports.generateReport"]

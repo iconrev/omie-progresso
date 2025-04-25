@@ -1,0 +1,189 @@
+service: icon-api-service-base
+frameworkVersion: ^3.3.0
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage,'qa'}
+  timeout: 20 # optional, in seconds, default is 6
+  region: ${file(config/config.json):${self:provider.stage}.region}
+  lambdaHashingVersion: "20201221"
+  ecr:
+    images:
+      generateReportPuppeteer:
+
+        path: ./
+        # file: ./DockerFiels/Dockerfile.generateReports
+        file: Dockerfile.generateReports
+        platform: linux/amd64
+
+  vpc:
+    securityGroupIds: ${file(config/config.json):${self:provider.stage}.vpc_security_gateway}
+    subnetIds: ${file(config/config.json):${self:provider.stage}.vpc_subnet}
+  environment:
+    TABLE_REPORTS_CALL: ${self:custom.tableReportCall}
+    NODE_ENV: ${self:provider.stage}
+    COGNITO_USER_POOL_ID: ${file(config/config.json):${self:provider.stage}.cognito}
+    COGNITO_USER_POOL_ARN: ${file(config/config.json):${self:provider.stage}.cognito_arn}
+    COGNITO_USER_POOL_REGION: ${file(config/config.json):${self:provider.stage}.cognito_region}
+    COGNITO_CLIENT_ID: ${file(config/config.json):${self:provider.stage}.cognito_client_id}
+    COGNITO_IDENTITY_POOL_ID: ${file(config/config.json):${self:provider.stage}.cognito_identity_pool_id}
+    BUCKET_MATERIAIS_EXCLUSIVOS: ${self:custom.materiais-associados-bucket}
+    BUCKET_PLANILHAS_INTEGRACAO: ${self:custom.planilha-integracao-bucket}
+    BUCKET_DIAG_REPORTS: ${self:custom.relatorios-diagnostico-bucket}
+    SQS_REGION: ${self:provider.region}
+    SQS_EMAIL_SERVICE_URL: { Ref: EmailServiceSQS }
+    UI_HOST: ${file(config/config.json):${self:provider.stage}.ui_host}
+    SNS_REPORTS_DIAGNOSTICO:
+      {
+        "Fn::Join":
+          [
+            "",
+            [
+              "arn:aws:sns:${self:provider.region}:",
+              { "Ref": "AWS::AccountId" },
+              ":${self:custom.snsTopicNameDiagnostico}",
+            ],
+          ],
+      }
+    SNS_REPORTS_DIAGNOSTICO_EXTERNO:
+      {
+        "Fn::Join":
+          [
+            "",
+            [
+              "arn:aws:sns:${self:provider.region}:",
+              { "Ref": "AWS::AccountId" },
+              ":${self:custom.snsTopicNameDiagnosticoExterno}",
+            ],
+          ],
+      }
+    SNS_REPORTS_DIAGNOSTICO_INTERNO:
+      {
+        "Fn::Join":
+          [
+            "",
+            [
+              "arn:aws:sns:${self:provider.region}:",
+              { "Ref": "AWS::AccountId" },
+              ":${self:custom.snsTopicNameDiagnosticoInterno}",
+            ],
+          ],
+      }
+    SNS_REPORTS_GENERATOR:
+      {
+        "Fn::Join":
+          [
+            "",
+            [
+              "arn:aws:sns:${self:provider.region}:",
+              { "Ref": "AWS::AccountId" },
+              ":${self:custom.snsTopicNameReportGenerator}",
+            ],
+          ],
+      }
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.TABLE_REPORTS_CALL}"
+        - Effect: Allow
+          Action:
+            - cognito-idp:AdminGetUser
+          Resource: "arn:aws:cognito-idp:us-east-1:*:userpool/*"
+        - Effect: "Allow"
+          Action:
+            - "s3:*"
+          Resource:
+            {
+              "Fn::Join":
+                [
+                  "",
+                  [
+                    "arn:aws:s3:::${self:custom.materiais-associados-bucket}",
+                    "/*",
+                  ],
+                ],
+            }
+        - Effect: "Allow"
+          Action:
+            - "s3:*"
+          Resource:
+            {
+              "Fn::Join":
+                [
+                  "",
+                  [
+                    "arn:aws:s3:::${self:custom.planilha-integracao-bucket}",
+                    "/*",
+                  ],
+                ],
+            }
+        - Effect: "Allow"
+          Action:
+            - "s3:*"
+          Resource:
+            {
+              "Fn::Join":
+                [
+                  "",
+                  [
+                    "arn:aws:s3:::${self:custom.relatorios-diagnostico-bucket}",
+                    "/*",
+                  ],
+                ],
+            }
+        - Effect: Allow
+          Action:
+            - sqs:*
+          Resource:
+            Fn::GetAtt: [EmailServiceSQS, Arn]
+        - Effect: "Allow"
+          Action:
+            - "amplify:*"
+          Resource: "arn:aws:amplify:sa-east-1:*:apps/*"
+        - Effect: "Allow"
+          Action:
+            - SNS:*
+          Resource: "*"
+
+
+
+plugins:
+  - serverless-offline
+  - serverless-prune-plugin
+  - serverless-disable-functions
+
+functions:
+  - ${file(resources/functions.yml)}
+
+resources:
+  - ${file(resources/sqs.yml)}
+  - ${file(resources/dynamodb-table.yml)}
+  - ${file(resources/s3-bucket.yml)}
+
+custom:
+  tableReportCall: simbiose-reports-${self:provider.stage}
+  snsTopicName: ${self:service}-${self:provider.stage}-topic
+  snsTopicNameDiagnostico: ${self:custom.snsTopicName}-diagnostico
+  snsTopicNameDiagnosticoExterno: icon-api-externo-${self:provider.stage}-topic-diagnostico-externo
+  snsTopicNameDiagnosticoInterno: icon-api-interno-${self:provider.stage}-topic-diagnostico-interno
+  snsTopicNameReportGenerator: icon-api-rerport-generator-${self:provider.stage}-topic-diagnostico
+
+  serverless-offline:
+    httpPort: 4444
+    lambdaPort: 3001
+
+  materiais-associados-bucket: materiais-exclusivos-associados-${self:provider.stage}
+  planilha-integracao-bucket: planilha-integracao-${self:provider.stage}
+  relatorios-diagnostico-bucket: relatorios-diagnostico-${self:provider.stage}
+
+  sqs-email-service: sqs-queue-email-service-${self:provider.stage}.fifo
+

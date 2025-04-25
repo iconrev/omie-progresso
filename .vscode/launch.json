@@ -1,0 +1,138 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "RUN QA-LOCAL",
+      "configurations": ["API Base", "API Externo", "API Interno", "API Metas",]
+    },
+    {
+      "name": "RUN PROD-LOCAL",
+      "configurations": ["PROD - API Base", "PROD - API Externo", "PROD - API Interno", "PROD - API Metas"]
+    }
+  ],
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "API Base",
+      "cwd": "${workspaceRoot}/icon-app-api-service-base",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-qa-local"],
+      "env": {
+        "AWS_PROFILE": "omie@simbiose",
+        "BUCKET_DIAG_REPORTS": "relatorios-diagnostico-qa"
+      },
+      // "preLaunchTask": "EnvCr edentials",
+      // "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "API Externo",
+      "cwd": "${workspaceRoot}/icon-app-api-service-externo",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-qa-local"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "API Interno",
+      "cwd": "${workspaceRoot}/icon-app-api-service-interno",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-qa-local"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "API Metas",
+      "cwd": "${workspaceRoot}/icon-app-api-service-metas",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-qa-local"]
+    },
+    {
+        "name": "===================",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "PROD - API Base",
+      "cwd": "${workspaceRoot}/icon-app-api-service-base",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-prod-local"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "PROD - API Externo",
+      "cwd": "${workspaceRoot}/icon-app-api-service-externo",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-prod-local"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "PROD - API Interno",
+      "cwd": "${workspaceRoot}/icon-app-api-service-interno",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-prod-local"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "PROD - API Metas",
+      "cwd": "${workspaceRoot}/icon-app-api-service-metas",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-prod-local"]
+    },
+    {
+        "name": "===================",
+    },
+    {
+      "name": "Python: Arquivo Atual",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": { "PYTHONPATH": "${cwd}" }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "SSH DB",
+      "cwd": "${workspaceRoot}",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "ssh",
+      "runtimeArgs": [
+        "-o", "TCPKeepAlive=yes", 
+        "-o", "ServerAliveCountMax=20",
+        "-o", "ServerAliveInterval=15",
+        "dgidaro@jump.omie.com.br", "-N", "-L",
+        "3307:icon-prod-rds.coucba2k6syv.sa-east-1.rds.amazonaws.com:3306"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run client - QA Local",
+      "cwd": "${workspaceRoot}/icon-app-ui",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start-qa-local"]
+    },
+    {
+        "name": "===================",
+    },
+  ]
+}

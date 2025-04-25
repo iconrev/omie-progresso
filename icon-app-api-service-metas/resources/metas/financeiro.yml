@@ -1,0 +1,69 @@
+faturamento:
+    handler: functions/metas/financeiro.main
+    events:
+        - http:
+            path: ${file(resources/base_url.yml):metas}/financeiro/faturamento/definicao
+            method: get
+            cors: true
+            
+        - http:
+            path: ${file(resources/base_url.yml):metas}/financeiro/faturamento/definicao
+            method: post
+            cors: true
+            
+
+rentabilidade:
+    handler: functions/metas/rentabilidade.main
+    events:
+        - http:
+            path: ${file(resources/base_url.yml):metas}/financeiro/rentabilidade/definicao
+            method: get
+            cors: true
+            
+        - http:
+            path: ${file(resources/base_url.yml):metas}/financeiro/rentabilidade/definicao
+            method: post
+            cors: true
+            
+
+custos:
+    handler: functions/metas/custos.main
+    events:
+        - http:
+            cors: true
+            path: ${file(resources/base_url.yml):metas}/financeiro/custos/definicao
+            method: get
+            
+        - http:
+            cors: true
+            path: ${file(resources/base_url.yml):metas}/financeiro/custos/definicao
+            method: post
+            
+
+orcamento:
+    handler: functions/metas/orcamento.main
+    events:
+        - http:
+            cors: true
+            path: ${file(resources/base_url.yml):metas}/financeiro/orcamento/definicao
+            method: get
+            
+        - http:
+            cors: true
+            path: ${file(resources/base_url.yml):metas}/financeiro/orcamento/definicao
+            method: post
+            
+
+endividamento:
+    handler: functions/metas/endividamento.main
+    events:
+        - http:
+            cors: true
+            path: ${file(resources/base_url.yml):metas}/financeiro/endividamento/definicao
+            method: get
+            
+        - http:
+            cors: true
+            path: ${file(resources/base_url.yml):metas}/financeiro/endividamento/definicao
+            method: post
+            

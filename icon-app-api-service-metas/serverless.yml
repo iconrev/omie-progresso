@@ -1,0 +1,43 @@
+service: icon-api-metas
+frameworkVersion: ^3.3.0
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage,'qa'}
+  timeout: 20 # optional, in seconds, default is 6
+  region: ${file(config/config.json):${self:provider.stage}.region}
+  lambdaHashingVersion: "20201221"
+  vpc:
+    securityGroupIds: ${file(config/config.json):${self:provider.stage}.vpc_security_gateway}
+    subnetIds: ${file(config/config.json):${self:provider.stage}.vpc_subnet}
+  environment:
+    NODE_ENV: ${self:provider.stage}
+    COGNITO_USER_POOL_ID: ${file(config/config.json):${self:provider.stage}.cognito}
+    COGNITO_USER_POOL_ARN: ${file(config/config.json):${self:provider.stage}.cognito_arn}
+    COGNITO_USER_POOL_REGION: ${file(config/config.json):${self:provider.stage}.cognito_region}
+    COGNITO_CLIENT_ID: ${file(config/config.json):${self:provider.stage}.cognito_client_id}
+    COGNITO_IDENTITY_POOL_ID: ${file(config/config.json):${self:provider.stage}.cognito_identity_pool_id}
+
+custom:
+  serverless-offline:
+    httpPort: 4449
+    lambdaPort: 3006
+  # warmup:
+  #   enabled: true
+  #   concurrency: 5 # Warm up 5 concurrent instances   
+
+plugins:
+  - serverless-offline
+  # - serverless-plugin-warmup
+  - serverless-prune-plugin
+
+functions:
+  - ${file(resources/functions.yml)}
+
+# package:
+#   exclude:
+#     - src/**
+#   include:
+#     - src/config/config.json
+
