@@ -1,0 +1,123 @@
+:root {
+    --row-dre-height: 30px;
+    --row-levantamento-height: 30px;
+    --month-min-width: 150px;
+}
+
+.row-dre-mensal,
+.row-levantamento-mensal {
+    margin: 0;
+
+    .col {
+        &.col-description {
+            flex: 0 0 auto;
+            width: fit-content;
+
+            .row {
+                min-height: 43px;
+
+                .col {
+                    &.category,
+                    &.sub-category {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+                    &.category {
+                        font-weight: 900;
+                        min-width: 380px;
+                    }
+                    &.category-title {
+                        padding-left: 30px;
+                    }
+                    &.sub-category {
+                        padding-left: 30px;
+                    }
+                }
+
+                &.category,
+                &.sub-category {
+                    &::before {
+                        content: " ";
+                        width: 4px;
+                        background-color: #c8ced3;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 767px) {
+                min-width: 310px;
+                max-width: inherit;
+            }
+        }
+        &.col-months {
+            overflow: auto;
+
+            .row {
+                display: flex;
+                flex-wrap: nowrap;
+
+                .month {
+                    min-width: var(--month-min-width);
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+
+                    input {
+                        padding: 0 5px;
+                        line-height: 1;
+                        height: auto;
+                    }
+
+                    select {
+                      padding: 0 5px;
+                      line-height: 1;
+                      height: auto;
+                    }
+
+                    button {
+                        max-width: 80px;
+                    }
+
+                    &.title {
+                        display: flex;
+                        align-items: center;
+                        padding-top: 10px;
+                        padding-bottom: 9px;
+                        font-weight: 900;
+
+                        > .row {
+                            align-items: center;
+                            width: 100%;
+
+                            > .col:last-child {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            > div:not(.header-months) {
+                .row {
+                    min-height: 43px;
+                }
+            }
+        }
+
+        &.empty {
+            min-width: calc(var(--month-min-width) * 12);
+        }
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .empty {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Hub",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Hub.js"
+}

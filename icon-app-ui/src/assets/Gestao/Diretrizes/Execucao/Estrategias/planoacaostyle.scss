@@ -1,0 +1,183 @@
+.estrategia-name {
+    //padding: 1.2rem;
+  padding-bottom: 0.7rem;
+
+}
+
+.estrategia-name-title {
+  //margin-top: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 1.5rem;
+}
+
+.vertical-carousel, .tasks {
+    //max-width: 350px;
+}
+
+.tasks {
+    .drop {
+        background-color: #f1f1f1;
+
+        .draggable {
+            padding: 8px !important;
+            border: 1px solid #ddd;
+            color: black;
+            background-color: white;
+
+            .header {
+                i {
+                    cursor: default;
+                }
+
+                div.title {
+                    line-height: 1.25em;
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .infos {
+                display: flex;
+                padding-top: 10px;
+
+                div {
+                    display: inline-flex;
+
+                    i {
+                        font-size: 16px;
+                        cursor: default;
+
+                        &.i-description {
+                            margin-right: 10px;
+                            font-size: 15px;
+                            align-self: center;
+                        }
+                        &.i-comment {
+                            margin-right: 3px;
+                        }
+                    }
+
+                    &.task {
+                        flex: 1;
+
+                        .comments {
+                            span {
+                                font-size: 13px;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+
+                    &.sponsor {
+                        justify-content: flex-end;
+
+                        >i {
+                            background-color: white;
+                            border-radius: 16px;
+                            border: 1px solid white;
+                            transition: margin-right .2s;
+
+                            &.mr- {
+                                &-10 {
+                                    margin-right: -10px;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            >i {
+                                &.mr- {
+                                    &-10 {
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+.row-fields {
+    margin-bottom: 20px;
+
+    .col-fields {
+        .field-info {
+            flex: 1;
+
+            input {
+                margin-bottom: 5px;
+            }
+
+            .badge-success {
+                margin-left: 5px;
+            }
+
+            label {
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            &.form-group {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.col-fields,
+.col-comments {
+    display: flex;
+    align-items: flex-start;
+
+    .icon-form {
+        font-size: 18px;
+    }
+}
+
+.row-comments {
+    .col-comments {
+        ul {
+            list-style: none;
+            margin-bottom: 0;
+
+            li {
+                margin-bottom: 10px;
+                
+
+                .username {
+                    span {
+                        font-weight: 500;
+                        margin-right: 4px;
+                        font-size: 12px;
+                    }
+                    time {
+                        color: #999;
+                        font-style: italic;
+                        font-size: 11px;
+                    }
+                }
+                
+                .comment {
+                    font-size: 14px!important;
+                    display: inline-block;
+                    padding: 5px 10px;
+                    border: 1px solid #d2d6de;
+                    border-radius: 5px;
+                    font-size: 8pt;
+                    background: #d2d6de;
+                }
+            }
+        }
+    }
+}

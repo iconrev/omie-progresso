@@ -1,0 +1,933 @@
+{
+    "Item": {
+        "req_id": "ea9fbc44-3707-472c-b757-e0356757aa44",
+        "data": {
+            "user_name": "Ramom Filho",
+            "user_email": "ramom.filho@omie.com.br",
+            "company_name": "Ramom Corporation",
+            "company_cnpj": "62.823.257/0001-09",
+            "date": "01/03/2024",
+            "year": "2024",
+            "report_type": "diagnostico",
+            "survival": {
+                "questions": [
+                    {
+                        "id": 3558,
+                        "peso": 12,
+                        "resposta": "Sim",
+                        "descricao": "Sua empresa possui um objetivo de médio e longo prazo e você se sente preparado para gerir seu negócio nesta direção em um ambiente de rápida transformação?"
+                    },
+                    {
+                        "id": 3559,
+                        "peso": 10,
+                        "resposta": "+/-",
+                        "descricao": "Você confia na sua equipe para vencer os desafios futuros do seu negócio?"
+                    },
+                    {
+                        "id": 3560,
+                        "peso": 9,
+                        "resposta": "Não",
+                        "descricao": "Você confia nos seus controles financeiros para gerir sua empresa nos próximos 12 meses?"
+                    },
+                    {
+                        "id": 3561,
+                        "peso": 9,
+                        "resposta": "Sim",
+                        "descricao": "Sua empresa tem uma visão e um plano de marketing alinhada com seu público alvo e com seus objetivos estratégicos?"
+                    },
+                    {
+                        "id": 3562,
+                        "peso": 12,
+                        "resposta": "Sim",
+                        "descricao": "Sua empresa é capaz de inovar na mesma velocidade em que o mercado muda?"
+                    },
+                    {
+                        "id": 3563,
+                        "peso": 9,
+                        "resposta": "Não",
+                        "descricao": "Você é senhor do seu tempo?"
+                    },
+                    {
+                        "id": 3564,
+                        "peso": 9,
+                        "resposta": "+/-",
+                        "descricao": "O seu sofrimento, inerente ao empreendedorismo, tem se convertido em aprendizado?"
+                    },
+                    {
+                        "id": 3565,
+                        "peso": 10,
+                        "resposta": "+/-",
+                        "descricao": "Você acredita na qualidade da comunicação, e no clima de confiança em sua empresa para atingir os objetivos?"
+                    },
+                    {
+                        "id": 3566,
+                        "peso": 8,
+                        "resposta": "Não",
+                        "descricao": "Você percebe em sua empresa, conflitos de Egos que afetem o bom desempenho?"
+                    },
+                    {
+                        "id": 3567,
+                        "peso": 12,
+                        "resposta": "Não",
+                        "descricao": "A empresa conhece e compreende claramente as necessidades de seus clientes?"
+                    }
+                ],
+                "gauge": {
+                    "percentual": 0.55,
+                    "texto": "* Média probabilidade de sobrevivência nos próximos anos."
+                }
+            },
+            "externo": {
+                "concorrentes": {
+                    "list": [
+                        {
+                            "preco": "Sou Melhor",
+                            "createdAt": {},
+                            "inovacao": "Sou Inferior",
+                            "qualidade": "Sou Igual",
+                            "portifolio": "Sou Igual",
+                            "ano_exercicio": "2024",
+                            "entrega": "Sou Inferior",
+                            "id": 1699,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "concorrente": "CONCORRENTE 1",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Não Avaliado",
+                            "createdAt": {},
+                            "inovacao": "Sou Inferior",
+                            "qualidade": "Sou Igual",
+                            "portifolio": "Sou Melhor",
+                            "ano_exercicio": "2024",
+                            "entrega": "Sou Melhor",
+                            "id": 1700,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "concorrente": "CONCORRENTE 2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Sou Melhor",
+                            "createdAt": {},
+                            "inovacao": "Sou Igual",
+                            "qualidade": "Sou Melhor",
+                            "portifolio": "Sou Inferior",
+                            "ano_exercicio": "2024",
+                            "entrega": "Sou Igual",
+                            "id": 1701,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "concorrente": "CONCORRENTE 3",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Sou Melhor",
+                            "createdAt": {},
+                            "inovacao": "Sou Melhor",
+                            "qualidade": "Sou Melhor",
+                            "portifolio": "Sou Melhor",
+                            "ano_exercicio": "2024",
+                            "entrega": "Sou Melhor",
+                            "id": 1702,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "concorrente": "CONCORRENTE 4",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Sou Igual",
+                            "createdAt": {},
+                            "inovacao": "Sou Inferior",
+                            "qualidade": "Sou Igual",
+                            "portifolio": "Sou Inferior",
+                            "ano_exercicio": "2024",
+                            "entrega": "Sou Inferior",
+                            "id": 1703,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "concorrente": "CONCORRENTE 5",
+                            "updatedAt": {}
+                        }
+                    ],
+                    "swot": [
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Alta",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Alta",
+                            "ameacaId": "vish, eita!",
+                            "oportunidadeId": "Vish, eita mano!",
+                            "id": 1455,
+                            "probabilidade_de_sucesso_da_oportunidade": "Baixa",
+                            "probabilidade_de_ocorrer_a_ameaca": "Alta",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Média",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Média",
+                            "ameacaId": "Dificuldade de fidelizar clientes",
+                            "oportunidadeId": "Atrair clientes chave dos concorrentes",
+                            "id": 1456,
+                            "probabilidade_de_sucesso_da_oportunidade": "Baixa",
+                            "probabilidade_de_ocorrer_a_ameaca": "Média",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Média",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Alta",
+                            "ameacaId": "Perda de governança/compliance",
+                            "oportunidadeId": "Negociar parceria em negócios com concorrentes",
+                            "id": 1457,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Alta",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Baixa",
+                            "ameacaId": "Dificuldade de fidelizar clientes",
+                            "oportunidadeId": "Regularização da empresa",
+                            "id": 1458,
+                            "probabilidade_de_sucesso_da_oportunidade": "Baixa",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Alta",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Alta",
+                            "ameacaId": "Vish, eita mano!",
+                            "oportunidadeId": "-",
+                            "id": 1459,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Alta",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        }
+                    ],
+                    "media_competitividade": {
+                        "media_preco": "87.50",
+                        "media_entrega": "50.00",
+                        "media_qualidade": "70.00",
+                        "media_inovacao": "30.00",
+                        "media_portifolio": "50.00",
+                        "competitividade": "57.50"
+                    }
+                },
+                "clientes": {
+                    "list": [
+                        {
+                            "preco": "Eu Decepciono",
+                            "cliente": "CLIENTE 1",
+                            "createdAt": {},
+                            "inovacao": "Eu Encanto",
+                            "qualidade": "Eu Encanto",
+                            "portifolio": "Eu Encanto",
+                            "ano_exercicio": "2024",
+                            "entrega": "Eu Encanto",
+                            "id": 1521,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Eu Atendo",
+                            "cliente": "CLIENTE 3",
+                            "createdAt": {},
+                            "inovacao": "Eu Atendo",
+                            "qualidade": "Eu Atendo",
+                            "portifolio": "Eu Atendo",
+                            "ano_exercicio": "2024",
+                            "entrega": "Eu Atendo",
+                            "id": 1522,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Eu Encanto",
+                            "cliente": "CLIENTE 4",
+                            "createdAt": {},
+                            "inovacao": "Eu Decepciono",
+                            "qualidade": "Eu Decepciono",
+                            "portifolio": "Eu Decepciono",
+                            "ano_exercicio": "2024",
+                            "entrega": "Eu Decepciono",
+                            "id": 1523,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Eu Encanto",
+                            "cliente": "CLIENTE 2",
+                            "createdAt": {},
+                            "inovacao": "Eu Decepciono",
+                            "qualidade": "Eu Atendo",
+                            "portifolio": "Não Avaliado",
+                            "ano_exercicio": "2024",
+                            "entrega": "Eu Atendo",
+                            "id": 1524,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Eu Atendo",
+                            "cliente": "CLIENTE 5",
+                            "createdAt": {},
+                            "inovacao": "Eu Atendo",
+                            "qualidade": "Não Avaliado",
+                            "portifolio": "Eu Decepciono",
+                            "ano_exercicio": "2024",
+                            "entrega": "Eu Encanto",
+                            "id": 1525,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        }
+                    ],
+                    "swot": [
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Média",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Média",
+                            "ameacaId": "Mudança de perfil do cliente torne nossos produtos/serviços obsoletos",
+                            "oportunidadeId": "Aumentar receita nos clientes atuais",
+                            "id": 1416,
+                            "probabilidade_de_sucesso_da_oportunidade": "Média",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Média",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Baixa",
+                            "ameacaId": "Perda de fidelidade do cliente",
+                            "oportunidadeId": "Vish, eita mano!",
+                            "id": 1417,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Baixa",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Média",
+                            "ameacaId": "Não ter recursos para atender demandas dos clientes",
+                            "oportunidadeId": "Oferecer soluções Customizadas",
+                            "id": 1418,
+                            "probabilidade_de_sucesso_da_oportunidade": "Baixa",
+                            "probabilidade_de_ocorrer_a_ameaca": "Média",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Média",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Baixa",
+                            "ameacaId": "Vish, eita mano!",
+                            "oportunidadeId": "-",
+                            "id": 1419,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Média",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Média",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Alta",
+                            "ameacaId": "Não conseguir acompanhar as demandas e necessidades dos clientes",
+                            "oportunidadeId": "Construir excelência operacional",
+                            "id": 1420,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        }
+                    ],
+                    "media_competitividade": {
+                        "media_preco": "60.00",
+                        "media_entrega": "60.00",
+                        "media_qualidade": "50.00",
+                        "media_inovacao": "40.00",
+                        "media_portifolio": "37.50",
+                        "competitividade": "49.50"
+                    }
+                },
+                "fornecedores": {
+                    "list": [
+                        {
+                            "preco": "Me Decepciona",
+                            "createdAt": {},
+                            "inovacao": "Me Atende",
+                            "qualidade": "Me Decepciona",
+                            "portifolio": "Não Avaliado",
+                            "ano_exercicio": "2024",
+                            "entrega": "Me Decepciona",
+                            "id": 1481,
+                            "fornecedor": "FORNECEDOR 1",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Me Encanta",
+                            "createdAt": {},
+                            "inovacao": "Me Decepciona",
+                            "qualidade": "Não Avaliado",
+                            "portifolio": "Me Encanta",
+                            "ano_exercicio": "2024",
+                            "entrega": "Me Atende",
+                            "id": 1482,
+                            "fornecedor": "FORNECEDOR 5",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Me Atende",
+                            "createdAt": {},
+                            "inovacao": "Me Decepciona",
+                            "qualidade": "Me Atende",
+                            "portifolio": "Me Decepciona",
+                            "ano_exercicio": "2024",
+                            "entrega": "Me Decepciona",
+                            "id": 1483,
+                            "fornecedor": "FORNECEDOR 3",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Não Avaliado",
+                            "createdAt": {},
+                            "inovacao": "Não Avaliado",
+                            "qualidade": "Não Avaliado",
+                            "portifolio": "Não Avaliado",
+                            "ano_exercicio": "2024",
+                            "entrega": "Não Avaliado",
+                            "id": 1484,
+                            "fornecedor": "FORNECEDOR 4",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "preco": "Me Decepciona",
+                            "createdAt": {},
+                            "inovacao": "Me Encanta",
+                            "qualidade": "Me Decepciona",
+                            "portifolio": "Me Encanta",
+                            "ano_exercicio": "2024",
+                            "entrega": "Me Atende",
+                            "id": 1485,
+                            "fornecedor": "FORNECEDOR 2",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        }
+                    ],
+                    "swot": [
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Alta",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Alta",
+                            "ameacaId": "Vish, eita mano!",
+                            "oportunidadeId": "-",
+                            "id": 1388,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Alta",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Média",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Alta",
+                            "ameacaId": "-",
+                            "oportunidadeId": "Integrar fornecedor na cadeia de valor da empresa",
+                            "id": 1389,
+                            "probabilidade_de_sucesso_da_oportunidade": "Média",
+                            "probabilidade_de_ocorrer_a_ameaca": "Alta",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Alta",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Alta",
+                            "ameacaId": "-",
+                            "oportunidadeId": "-",
+                            "id": 1390,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Alta",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Alta",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "Média",
+                            "ameacaId": "Falta de insumos e matéria prima",
+                            "oportunidadeId": "-",
+                            "id": 1392,
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "createdAt": {},
+                            "atratividade_da_oportunidade": "Alta",
+                            "ano_exercicio": "2024",
+                            "relevancia_da_ameaca": "-",
+                            "ameacaId": "Vish, eita mano!",
+                            "oportunidadeId": "-",
+                            "id": 1408,
+                            "probabilidade_de_sucesso_da_oportunidade": "-",
+                            "probabilidade_de_ocorrer_a_ameaca": "-",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        }
+                    ],
+                    "media_competitividade": {
+                        "media_preco": "37.50",
+                        "media_entrega": "25.00",
+                        "media_qualidade": "16.67",
+                        "media_inovacao": "37.50",
+                        "media_portifolio": "66.67",
+                        "competitividade": "36.67"
+                    }
+                },
+                "macros": {
+                    "list": [
+                        {
+                            "atratividade_da_oportunidade": "Alta",
+                            "tendencia": "Alta",
+                            "relevancia_da_ameaca": "Média",
+                            "probabilidade_de_sucesso_da_oportunidade": "Média",
+                            "probabilidade_de_ocorrer_a_ameaca": "Média",
+                            "createdAt": {},
+                            "ano_exercicio": "2024",
+                            "fator": "Cambio",
+                            "ameacaId": "Processos trabalhistas",
+                            "oportunidadeId": "Vish, eita mano!",
+                            "id": 1406,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "atratividade_da_oportunidade": "Média",
+                            "tendencia": "Baixa",
+                            "relevancia_da_ameaca": "Alta",
+                            "probabilidade_de_sucesso_da_oportunidade": "Baixa",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "createdAt": {},
+                            "ano_exercicio": "2024",
+                            "fator": "Cultural",
+                            "ameacaId": "Processos trabalhistas",
+                            "oportunidadeId": "Acesso a fontes de financiamentos do governo",
+                            "id": 1407,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "atratividade_da_oportunidade": "Alta",
+                            "tendencia": "Média",
+                            "relevancia_da_ameaca": "-",
+                            "probabilidade_de_sucesso_da_oportunidade": "Baixa",
+                            "probabilidade_de_ocorrer_a_ameaca": "-",
+                            "createdAt": {},
+                            "ano_exercicio": "2024",
+                            "fator": "Demografia - Envelhecimento",
+                            "ameacaId": "-",
+                            "oportunidadeId": "Automação para indústria 4.0",
+                            "id": 1408,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "atratividade_da_oportunidade": "Baixa",
+                            "tendencia": "Alta",
+                            "relevancia_da_ameaca": "-",
+                            "probabilidade_de_sucesso_da_oportunidade": "Baixa",
+                            "probabilidade_de_ocorrer_a_ameaca": "-",
+                            "createdAt": {},
+                            "ano_exercicio": "2024",
+                            "fator": "Globalização",
+                            "ameacaId": "Mazulha!",
+                            "oportunidadeId": "Realizar hedge cambial",
+                            "id": 1409,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        },
+                        {
+                            "atratividade_da_oportunidade": "Média",
+                            "tendencia": "Baixa",
+                            "relevancia_da_ameaca": "Alta",
+                            "probabilidade_de_sucesso_da_oportunidade": "Alta",
+                            "probabilidade_de_ocorrer_a_ameaca": "Baixa",
+                            "createdAt": {},
+                            "ano_exercicio": "2024",
+                            "fator": "Politica",
+                            "ameacaId": "Obsolescência dos produtos ou serviços",
+                            "oportunidadeId": "Redução de custos de folha com flexibilização trabalhista",
+                            "id": 1410,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "updatedAt": {}
+                        }
+                    ],
+                    "macro_avaliacao": {
+                        "fatores": [
+                            {
+                                "fator": "Cambio",
+                                "media": 62.5
+                            },
+                            {
+                                "fator": "Cultural",
+                                "media": 37.5
+                            },
+                            {
+                                "fator": "Demografia - Envelhecimento",
+                                "media": 100
+                            },
+                            {
+                                "fator": "Globalização",
+                                "media": 75
+                            },
+                            {
+                                "fator": "Politica",
+                                "media": 62.5
+                            }
+                        ],
+                        "concorrencia": 67.5,
+                        "status": "success"
+                    }
+                }
+            },
+            "interno": {
+                "analiseFinanceiro": {
+                    "analise": {
+                        "receita_liquida": 79417920,
+                        "percentual_total_despesas": 54.48532284622066,
+                        "smiles": {
+                            "smile_custo_mercadoria": "Ruim",
+                            "smile_taxa_divida_lucro": "Bom",
+                            "smile_rentabilidade_ultimo": "Bom",
+                            "smile_inadimplencia": "NaoAvaliado",
+                            "smile_crescimento": "Neutro",
+                            "smile_ebitda_ultimo": "Bom",
+                            "smile_percentual_total_despesas": "Neutro",
+                            "smile_receita_bruta": "Bom"
+                        },
+                        "rentabilidade": 22.69869891463199,
+                        "imposto_sobre_receitas": 0.11,
+                        "lucro_bruto": 66434450,
+                        "rentabilidade_media": -839.3869098516092,
+                        "receita_bruta": 82404124,
+                        "imposto_sobre_lucro_perc": 4.088697065695401,
+                        "divida": 89734,
+                        "dre": 218,
+                        "ebitda_percentage": 26.134974749564716,
+                        "despesas": [
+                            {
+                                "field": "despesas_com_pessoal",
+                                "editable": false,
+                                "percentage": 16.97673717833339,
+                                "dre_id": 218,
+                                "description": "Pessoal",
+                                "id": 1172,
+                                "value": 9876234,
+                                "isDreDespesa": true,
+                                "key": "pessoal"
+                            },
+                            {
+                                "field": "despesas_comerciais",
+                                "editable": true,
+                                "percentage": 0.4991620040333063,
+                                "dre_id": 218,
+                                "description": "Comerciais",
+                                "id": 1173,
+                                "value": 290388,
+                                "isDreDespesa": true,
+                                "key": "comerciais"
+                            },
+                            {
+                                "field": "despesas_administrativa",
+                                "editable": true,
+                                "percentage": 0.00021143066000005743,
+                                "dre_id": 218,
+                                "description": "Administrativa",
+                                "id": 1174,
+                                "value": 123,
+                                "isDreDespesa": true,
+                                "key": "administrativa"
+                            },
+                            {
+                                "field": "despesas_tributarias",
+                                "editable": true,
+                                "percentage": 0.16971865678411113,
+                                "dre_id": 218,
+                                "description": "Tributárias",
+                                "id": 1175,
+                                "value": 98734,
+                                "isDreDespesa": true,
+                                "key": "tributarias"
+                            },
+                            {
+                                "field": "despesas_viagens",
+                                "editable": true,
+                                "percentage": 1.551947456008714,
+                                "dre_id": 218,
+                                "description": "Viagens",
+                                "id": 1176,
+                                "value": 902847,
+                                "isDreDespesa": true,
+                                "key": "viagens"
+                            },
+                            {
+                                "field": "despesas_logistica",
+                                "editable": true,
+                                "percentage": 0.6657659262164409,
+                                "dre_id": 218,
+                                "description": "Logística",
+                                "id": 1177,
+                                "value": 387310,
+                                "isDreDespesa": true,
+                                "key": "logistica"
+                            },
+                            {
+                                "field": "despesas_servicos",
+                                "editable": true,
+                                "percentage": 17.060097583672437,
+                                "dre_id": 218,
+                                "description": "Serviços",
+                                "id": 1178,
+                                "value": 9924729,
+                                "isDreDespesa": true,
+                                "key": "servicos"
+                            },
+                            {
+                                "field": "despesas_ocupacao",
+                                "editable": true,
+                                "percentage": 40.25397050879207,
+                                "dre_id": 218,
+                                "description": "Ocupação",
+                                "id": 1179,
+                                "value": 23417788,
+                                "isDreDespesa": true,
+                                "key": "ocupacao"
+                            },
+                            {
+                                "field": "despesas_financeiras",
+                                "editable": false,
+                                "percentage": 0.504473554760137,
+                                "dre_id": null,
+                                "description": "Financeiras",
+                                "id": null,
+                                "value": 293478,
+                                "isDreDespesa": false,
+                                "key": "financeiras"
+                            },
+                            {
+                                "field": "custo_dos_produtos_industrializados",
+                                "editable": false,
+                                "percentage": 22.317915700739395,
+                                "dre_id": null,
+                                "description": "Custo de Mercadorias Vendidas",
+                                "id": null,
+                                "value": 12983470,
+                                "isDreDespesa": false,
+                                "key": "custo_dos_produtos_industrializados"
+                            }
+                        ],
+                        "custo_dos_produtos_industrializados": 15.755849792177877,
+                        "imposto_sobre_lucro": 3369255,
+                        "crescimento": 32122.088230923833,
+                        "taxa": 0.004797413094402551,
+                        "custos": 12983470,
+                        "crescimento_quatro": 82148386,
+                        "depreciacao_amortizacao": 92347,
+                        "ebitda": 21536297,
+                        "inadimplencia": 0.007091878071539236,
+                        "ebitda_ano_passado_diferenca": 27.1176794859397,
+                        "inadimplencia_valor": 487,
+                        "percentual_ebitda_ano_passado": 0,
+                        "ebitda_medio": 14754189,
+                        "lucro_liquido": 18704664,
+                        "despesas_totais": 44898153,
+                        "status": "success"
+                    },
+                    "media_gauge": {
+                        "percentual": 70.83333333333334,
+                        "ano": 2023
+                    }
+                },
+                "analiseComercial": {
+                    "analise": {
+                        "percentual_clientes_ativos": 25.376521559727667,
+                        "vendas": {
+                            "execucao_plano_relacionamento": "NaoTem",
+                            "processos_politica_relacionamento_cliente": "Bom",
+                            "nivel_relacionamento_clientes": 26,
+                            "notas_fiscais_emitidas": 39874910,
+                            "reclamacoes_clientes": 34908,
+                            "atuacao_demanda_identificadas": "Deficiente",
+                            "equipe_treinada_para_relacionamento": "NaoTem",
+                            "clientes_fidelizados": 2934879,
+                            "propostas_enviadas_no_ano": 9239487,
+                            "ano_exercicio": 2023,
+                            "canais_comunicacao_estruturado": "NaoTem",
+                            "carteira_de_clientes_ativa": 1230,
+                            "propostas_aprovadas_no_ano": 293847,
+                            "clientes_perdidos": 230984,
+                            "id": 44,
+                            "novos_clientes_no_ano": 1234,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "base_clientes": 4847
+                        },
+                        "percentual_clientes_fidelizados": 238608.0487804878,
+                        "avaliacao": {
+                            "smile_novos_clientes_no_ano": "Ruim",
+                            "smile_percentual_clientes_ativos": "Neutro",
+                            "smile_nivel_relacionamento_clientes": "Ruim",
+                            "smile_ticket_medio": "Neutro",
+                            "smile_clientes_perdidos": "Neutro",
+                            "smile_taxa_reclamacao_nf": "NaoAvaliado",
+                            "smile_taxa_conversao": "Neutro",
+                            "smile_clientes_fidelizados": "Ruim"
+                        },
+                        "ticket_medio": 2.066565767797344,
+                        "taxa_conversao": 3.1803389084264095,
+                        "taxa_reclamacao_nf": 0.08754377125866866,
+                        "status": "success"
+                    },
+                    "media_gauge": {
+                        "percentual": 45.83333333333333,
+                        "ano": 2023
+                    }
+                },
+                "analiseProcessos": {
+                    "analise": {
+                        "custos_garantia": 0.24694031089997387,
+                        "capacidade_produtiva": 14.779808710444547,
+                        "faturamento_custo_folha": 8.343678774723239,
+                        "processos": {
+                            "valor_do_estoque": 293478,
+                            "volume_produzido_no_ano": 340580,
+                            "entregas_no_prazo": 121,
+                            "capacidade_produzida": 2304360,
+                            "ano_exercicio": 2023,
+                            "custos_garantia": 203489,
+                            "refugo_retrabalho": 20348200,
+                            "id": 46,
+                            "funcionarios": 34098800,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "percentual_disponibilidade_equipamento": -3884
+                        },
+                        "avaliacao": {
+                            "smile_custos_garantia": "Bom",
+                            "smile_percentual_capacidade_produtiva": "Neutro",
+                            "smile_faturamento_custo_folha": "Ruim",
+                            "smile_quantidade_entregue_funcionarios": "Ruim",
+                            "smile_percentual_disponibilidade_equipamento": "Ruim",
+                            "smile_refugo_retrabalho": "Neutro",
+                            "smile_valor_do_estoque": "Neutro",
+                            "smile_quantidade_giro_estoque": "Neutro",
+                            "smile_entregas_no_prazo": "Bom",
+                            "smile_clientes_fidelizados": "NaoAvaliado"
+                        },
+                        "quantidade_giro_estoque": 280.78467210489373,
+                        "produtividade": 8.343678774723239,
+                        "receita_bruta": 82404124,
+                        "eficiencia_operacional": -3884,
+                        "quantidade_entregue_funcionarios": 0.009988034769552007,
+                        "percentual_capacidade_produtiva": 14.779808710444547,
+                        "receita_bruta_custo_folha": 8.343678774723239,
+                        "status": "success"
+                    },
+                    "media_gauge": {
+                        "percentual": 62.5,
+                        "ano": 2023
+                    }
+                },
+                "analisePessoas": {
+                    "analise": {
+                        "comercial": {
+                            "nivel_relacionamento_clientes": "Ruim",
+                            "notas_fiscais_emitidas": null,
+                            "percentual_clientes_ativos": "Neutro",
+                            "reclamacoes_clientes": null,
+                            "clientes_fidelizados": "Ruim",
+                            "taxa_conversao": "Neutro",
+                            "createdAt": "2024-01-04T12:43:50.000Z",
+                            "propostas_enviadas_no_ano": null,
+                            "ano_exercicio": 2023,
+                            "carteira_de_clientes_ativa": null,
+                            "propostas_aprovadas_no_ano": null,
+                            "clientes_perdidos": "Neutro",
+                            "id": 29,
+                            "novos_clientes_no_ano": "Ruim",
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "ticket_medio": "Neutro",
+                            "base_clientes": null,
+                            "taxa_reclamacao_nf": "NaoAvaliado",
+                            "updatedAt": "2024-02-07T18:33:01.000Z"
+                        },
+                        "pessoas": {
+                            "absenteismo": 2347,
+                            "competencia_operacao": "Deficiente",
+                            "engajamento_motivacao_comprometimento": "Bom",
+                            "retencao_avaliacao_desempenho": "NaoImplantado",
+                            "retencao_reconhecimento_pessoas": "NaoImplantado",
+                            "total_inovacao_implementada_empresa": 2908350,
+                            "retencao_cargo_salario": "NaoImplantado",
+                            "retencao_recompensa": "NaoImplantado",
+                            "rotatividade": 2347270,
+                            "ano_exercicio": 2023,
+                            "funcionarios_antigos": 20374,
+                            "engajamento_relacionamento_interpessoal": "Baixa",
+                            "engajamento_clima_organizacional": "Ruim",
+                            "retencao_plano_carreira": "NaoImplantado",
+                            "competencia_gerenciais": "Plena",
+                            "engajamento_comunicacao_interna": "Excelente",
+                            "id": 36,
+                            "faturamento_oriundo_inovacao": 2038970,
+                            "EmpresaId": "f2638cd5b97049658675dbfe426f6dd2",
+                            "competencia_adm": "Deficiente"
+                        },
+                        "nivel_competencia": 46.666666666666664,
+                        "nivel_engajamento": 62.5,
+                        "nivel_retencao": 20,
+                        "avaliacao": {
+                            "smile_absenteismo": "Neutro",
+                            "smile_rotatividade": "NaoAvaliado",
+                            "smile_nivel_retencao": "Bom",
+                            "smile_faturamento_oriundo_inovacao": "NaoAvaliado",
+                            "smile_total_inovacao_implementada_empresa": "Ruim",
+                            "smile_funcionarios_antigos": "Neutro",
+                            "smile_nivel_competencia": "Bom",
+                            "smile_nivel_engajamento": "Ruim"
+                        },
+                        "status": "success"
+                    },
+                    "media_gauge": {
+                        "percentual": 50,
+                        "ano": 2023
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@import "../dre-levantamento-style.scss";
+
+:root {
+    --default-height: 43px;
+
+    --bg-btn-financeiro: 81, 211, 145;
+    --bg-btn-comercial: 97, 183, 219;
+    --bg-btn-processos: 158, 130, 241;
+    --bg-btn-pessoas: 210, 68, 113;
+    --bg-btn-opacity-hover: .8;
+}
+
+.row-dashboard-eficacia {
+    margin: 0;
+
+    .col {
+        &.col-description,
+        &.col-months {
+            table {
+                margin: 0;
+
+                td {
+                    vertical-align: middle;
+
+                    &.meta-efetivo {
+                        padding: 0;
+
+                        tr {
+                            &.color {
+                                &-dark {
+                                    background-color: #ccc;
+                                }
+                                &-light {
+                                    background-color: #f1f1f1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.col-description {
+            flex: 0 0 auto;
+            width: fit-content;
+            padding: 0;
+        }
+        &.col-months {
+            overflow: auto;
+            padding: 0;
+
+            table {
+                th {
+                    &.month {
+                        &.title {
+                            min-width: var(--month-min-width);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tab-pane {
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        button {
+            width: fit-content;
+
+            &.btn {
+                &-financeiro:not(.deactive) {
+                    background-color: rgba(var(--bg-btn-financeiro), 1);
+
+                    &:hover {
+                        background-color: rgba(var(--bg-btn-financeiro), var(--bg-btn-opacity-hover));
+                    }
+                }
+                &-comercial:not(.deactive) {
+                    background-color: rgba(var(--bg-btn-comercial), 1);
+
+                    &:hover {
+                        background-color: rgba(var(--bg-btn-comercial), var(--bg-btn-opacity-hover));
+                    }
+                }
+                &-processos:not(.deactive) {
+                    background-color: rgba(var(--bg-btn-processos), 1);
+
+                    &:hover {
+                        background-color: rgba(var(--bg-btn-processos), var(--bg-btn-opacity-hover));
+                    }
+                }
+                &-pessoas:not(.deactive) {
+                    background-color: rgba(var(--bg-btn-pessoas), 1);
+
+                    &:hover {
+                        background-color: rgba(var(--bg-btn-pessoas), var(--bg-btn-opacity-hover));
+                    }
+                }
+            }
+        }
+    }
+
+    .caroussel-chart {
+        .card {
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+
+            .card-body {
+                .bar {
+                    &-financeiro {
+                        background-color: rgba(var(--bg-btn-financeiro), 1);
+                    }
+                }
+            }
+        }
+    
+        .little-charts {
+            .card {
+                cursor: pointer;
+                transition: 0.3s;
+    
+                &:hover {
+                    transform: scale(1.04);
+                }
+            }
+        }
+    }
+}

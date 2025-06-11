@@ -1,0 +1,37 @@
+@import "../dre-levantamento-style.scss";
+
+.row-dre-mensal {
+    .col {
+        &.col-description {
+            .row {
+                &.category,
+                &.sub-category {
+                    &.positive::before {
+                        background-color: green;
+                    }
+                    &.negative::before {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+        &.col-months {
+            .row {
+                .month {
+                    &.value {
+                        font-weight: 900;
+                    }
+
+                    &.lucro-liquido {
+                        &.positive {
+                            color: green;
+                        }
+                        &.negative {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+diretrizes_tarefas:
+  handler: functions/tarefas.main
+  events:
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/estrategias/{strategyId}/{perspective}/tarefas/listar
+        method: get
+          
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/responsaveis/listar
+        method: get
+          
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/estrategias/tarefas/nova
+        method: post
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/estrategias/tarefas/editar
+        method: post
+        

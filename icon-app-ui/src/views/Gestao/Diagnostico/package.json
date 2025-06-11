@@ -1,0 +1,6 @@
+{
+  "name": "Diagnostico",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Diagnostico.js"
+}

@@ -1,0 +1,79 @@
+service: icon-api-interno
+frameworkVersion: ^3.3.0
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage,'qa'}
+  timeout: 20 # optional, in seconds, default is 6
+  region: ${file(./config.yml):region}
+  lambdaHashingVersion: "20201221"
+  vpc:
+    securityGroupIds: ${file(./config.yml):vpc.securityGroupIds}
+    subnetIds: ${file(./config.yml):vpc.subnetIds}
+  environment:
+    NODE_ENV: ${self:provider.stage}
+    COGNITO_USER_POOL_ID: ${file(./config.yml):cognito.userPoolId}
+    COGNITO_USER_POOL_ARN: ${file(./config.yml):cognito.userPoolArn}
+    COGNITO_USER_POOL_REGION: ${file(./config.yml):cognito.region}
+    COGNITO_CLIENT_ID: ${file(./config.yml):cognito.clientId}
+    COGNITO_IDENTITY_POOL_ID: ${file(./config.yml):cognito.identityPoolId}
+    TABLE_REPORTS_CALL: ${self:custom.tableReportCall}
+    SNS_REPORTS_DIAGNOSTICO:
+      {
+        "Fn::Join":
+          [
+            "",
+            [
+              "arn:aws:sns:${self:provider.region}:",
+              { "Ref": "AWS::AccountId" },
+              ":${self:custom.snsTopicNameDiagnosticoInterno}",
+            ],
+          ],
+      }    
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem      
+          Resource: "arn:aws:dynamodb:*:*:table/*"
+        - Effect: "Allow"
+          Action:
+            - SNS:*
+          Resource: "*"          
+
+custom:
+  webpack:
+    packager: 'npm'
+    includeModules: true
+  serverless-offline:
+    httpPort: 4446
+    lambdaPort: 3003
+  tableReportCall: simbiose-reports-${self:provider.stage}
+  snsTopicName: ${self:service}-${self:provider.stage}-topic
+  snsTopicNameDiagnosticoInterno: icon-api-interno-${self:provider.stage}-topic-diagnostico-interno
+
+plugins:
+  - serverless-offline
+  # - serverless-plugin-warmup
+  - serverless-prune-plugin
+  - serverless-disable-functions
+  - serverless-webpack
+
+functions:
+  - ${file(resources/functions.yml)}
+
+package:
+  excludeDevDependencies: true
+
+# package:
+#   exclude:
+#     - src/**
+#   include:
+#     - src/config/config.json

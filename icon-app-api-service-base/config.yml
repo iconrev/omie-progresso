@@ -1,0 +1,19 @@
+region: sa-east-1
+
+vpc:
+  securityGroupIds:
+    - sg-020957ff30d03df97
+  subnetIds:
+    - subnet-06052f26e4c90bd5d
+    - subnet-09f08046d3dd01e5b
+    - subnet-032d505f995126e2b
+
+cognito:
+  region: sa-east-1 
+  userPoolId: sa-east-1:aa707e27-7614-4173-8272-5266f440d50f
+  userPoolArn: arn:aws:cognito-identity:sa-east-1:932181321609:identitypool/sa-east-1:aa707e27-7614-4173-8272-5266f440d50f
+  clientId: v503gdgvoep574r3h1mqlc8q7
+  identityPoolId: sa-east-1:aa707e27-7614-4173-8272-5266f440d50f
+
+ui:
+  host: http://localhost:3000

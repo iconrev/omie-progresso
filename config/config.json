@@ -1,0 +1,129 @@
+{
+  "qa": {
+    "ui_host": "",
+    "cognito": "",
+    "cognito_arn": "",
+    "cognito_region": "",
+    "cognito_client_id": "",
+    "cognito_identity_pool_id": "",
+    "region": "",
+    "vpc_security_gateway": [
+      ""
+    ],
+    "vpc_subnet": [
+      ""
+    ],
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "dialect": "",
+    "define": {
+      "freezeTableName": true
+    },
+    "dialectOptions": {
+      "connectTimeout": 4000,
+      "decimalNumbers": true
+    }
+  },
+  "prod": {
+    "ui_host": "",
+    "cognito": "",
+    "cognito_arn": "",
+    "cognito_region": "",
+    "cognito_client_id": "",
+    "cognito_identity_pool_id": "",
+    "region": "",
+    "vpc_security_gateway": [
+      ""
+    ],
+    "vpc_subnet": [
+      ""
+    ],
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "dialect": "",
+    "define": {
+      "freezeTableName": true
+    },
+    "dialectOptions": {
+      "connectTimeout": 4000,
+      "decimalNumbers": true
+    }
+  },
+  "qa-local": {
+    "cognito": "",
+    "cognito_arn": "",
+    "cognito_region": "",
+    "cognito_client_id": "",
+    "cognito_identity_pool_id": "",
+    "region": "",
+    "vpc_security_gateway": [
+      ""
+    ],
+    "vpc_subnet": [
+      ""
+    ],
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "port": 3306,
+    "dialect": "",
+    "define": {
+      "freezeTableName": true
+    },
+    "dialectOptions": {
+      "connectTimeout": 4000,
+      "decimalNumbers": true
+    }
+  },
+  "prod-local": {
+    "cognito": "",
+    "cognito_arn": "",
+    "cognito_region": "",
+    "cognito_client_id": "",
+    "cognito_identity_pool_id": "",
+    "region": "",
+    "vpc_security_gateway": [
+      ""
+    ],
+    "vpc_subnet": [
+      ""
+    ],
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "dialect": "",
+    "define": {
+      "freezeTableName": true
+    },
+    "dialectOptions": {
+      "connectTimeout": 4000,
+      "decimalNumbers": true
+    }
+  },
+  "retry": {
+    "match": [
+      "/ETIMEDOUT/",
+      "/EHOSTUNREACH/",
+      "/ECONNRESET/",
+      "/ECONNREFUSED/",
+      "/ETIMEDOUT/",
+      "/ESOCKETTIMEDOUT/",
+      "/EHOSTUNREACH/",
+      "/EPIPE/",
+      "/EAI_AGAIN/",
+      "/SequelizeConnectionError/",
+      "/SequelizeConnectionRefusedError/",
+      "/SequelizeHostNotFoundError/",
+      "/SequelizeHostNotReachableError/",
+      "/SequelizeInvalidConnectionError/",
+      "/SequelizeConnectionTimedOutError/"
+    ],
+    "max": 5
+  }
+}

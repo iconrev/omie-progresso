@@ -1,0 +1,140 @@
+#API Gestão dados Gráfico
+gestao_diagnostico_externo:
+  handler: functions/grafico.gestao_diagnostico
+  events:
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diagnostico/externo/avaliacao
+        method: get
+
+gestao_diag_ext_conc:
+  handler: functions/concorrentes.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/concorrentes/empresa/{companyId}
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/concorrentes/empresa/{companyId}
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/concorrentes/empresa/{companyId}/swot
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/concorrentes/empresa/{companyId}/swot
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/concorrentes/empresa/{companyId}/swot/options
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/concorrentes/empresa/{companyId}/swot/options
+        method: put
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/concorrentes/empresa/{companyId}/avaliacao
+        method: get
+
+gestao_diag_ext_cli:
+  handler: functions/clientes.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/clientes/empresa/{companyId}
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/clientes/empresa/{companyId}
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/clientes/empresa/{companyId}/swot
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/clientes/empresa/{companyId}/swot
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/clientes/empresa/{companyId}/avaliacao
+        method: get
+
+gestao_diag_ext_forn:
+  handler: functions/fornecedores.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/fornecedores/empresa/{companyId}
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/fornecedores/empresa/{companyId}
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/fornecedores/empresa/{companyId}/swot
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/fornecedores/empresa/{companyId}/swot
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/fornecedores/empresa/{companyId}/avaliacao
+        method: get
+
+gestao_diag_ext_macro:
+  handler: functions/macro.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/macro/empresa/{companyId}/swot
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/macro/empresa/{companyId}
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/macro/empresa/{companyId}/avaliacao
+        method: get
+
+gestao_diag_swot:
+  handler: functions/swot.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/swot/empresa/{companyId}/tabela
+        method: get
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/swot/empresa/{companyId}/tabela/options/{nome}/{origem}
+        method: post
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/swot/empresa/{companyId}/tabela/options/{nome}/{origem}/{id}
+        method: put
+    - http:
+        cors: true
+        path: api/gestao/diagnostico/externo/swot/empresa/{companyId}/tabela/options/{nome}/{origem}/{id}
+        method: delete
+
+diagnosticoExternoReportsDispatch:
+  handler: functions/reports.dispatcher
+  timeout: 900
+  events:
+    - sns: ${self:custom.snsTopicNameDiagnosticoExterno}
+
+
+runLocalFunction:
+#   handler: functions/reports.dispatcher
+  handler: functions/concorrentes.testeAPI
+  enabled: false
+  events:
+    - http:
+        path: api/
+        method: post

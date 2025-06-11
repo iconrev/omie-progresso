@@ -1,0 +1,13 @@
+mapa_estrategico:
+  handler: functions/mapa.main
+  events:
+    - http:
+        path: api/gestao/{companyId}/metas/mapa/{mapaId}
+        cors: true
+        method: get
+        
+    - http:
+        path: api/gestao/{companyId}/metas/mapa/{mapaId}
+        cors: true
+        method: post
+        

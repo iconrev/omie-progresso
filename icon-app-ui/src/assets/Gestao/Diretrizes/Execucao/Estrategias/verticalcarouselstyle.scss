@@ -1,0 +1,84 @@
+.outer-container {
+    display: flex;
+    margin: auto;
+    overflow: hidden;
+
+    > div {
+        flex: 1;
+    }
+
+    .carousel-wrapper,
+    .item {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 1;
+        min-height: 65px;
+    }
+
+    .carousel-wrapper {
+        display: flex;
+
+        .carousel {
+            display: flex;
+            flex: 1;
+            height: 100%;
+
+            .slides {
+                flex: 1;
+                width: 100%;
+                overflow: hidden;
+
+                .carousel-inner {
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+                    max-height: 250px;
+                    height: 250px;
+
+                    .item {
+                        position: absolute;
+                        padding: 10px;
+                        margin: 0;
+                        opacity: 0;
+                        top: 90px;
+                        width: 95%;
+                        transition: transform 0.4s ease, opacity 0.4s ease;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background-color: white;
+                        z-index: 0;
+
+                        &.active {
+                            z-index: 1;
+                        }
+                        &.visible {
+                            opacity: 1;
+                        }
+
+                        &:hover {
+                            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+                        }
+                    }
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        z-index: 2;
+                        position: absolute;
+                        width: 100%;
+                        height: 110px;
+                        pointer-events: none;
+                    }
+                    &::before {
+                        top: 0;
+                        background: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 0%, rgba(255, 255, 255, 1) 100%);
+                    }
+                    &::after {
+                        bottom: 0;
+                        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, hsla(0, 0%, 100%, 0) 100%);
+                    }
+                }
+            }
+        }
+    }
+}

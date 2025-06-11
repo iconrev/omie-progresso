@@ -1,0 +1,136 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.legenda-row {
+  margin: 20px 15px 0 15px;
+}
+
+.legenda-icon {
+  float: left;
+  font-size: 20px;
+  margin: 0 10px !important;
+  padding: 0 !important;
+}
+
+.legenda-text {
+  margin: 0 !important;
+  padding: 0 !important;
+  float: left;
+  font-style: italic;
+}
+
+.container-defined {
+  margin: 0 0 5px 0 !important;
+  border-radius: 5px;
+  padding-bottom: 15px !important;
+}
+
+.container-available {
+  margin: 0 !important;
+}
+
+.centralize-col {
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.titles {
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  font-size: 35px;
+  color: black;
+}
+
+.map-perspectiva-title {
+  margin: 0 !important;
+  color: white !important;
+  border-radius: 15px;
+  z-index: 999;
+}
+
+.map-perspectiva-title-text {
+  margin: 0 !important;
+  padding: 5px !important;
+}
+
+.map-column-background {
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: -12em;
+  padding-left: 15em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  z-index: 10;
+  min-height: 120px;
+}
+
+.map-postit-row-financeiro {
+  background-color: rgba(var(--color-financeiro), 0.4) !important;
+}
+
+.map-postit-row-comercial {
+  background-color: rgba(var(--color-comercial), 0.4) !important;
+}
+
+.map-postit-row-processos {
+  background-color: rgba(var(--color-processos), 0.4) !important;
+}
+
+.map-postit-row-pessoas {
+  background-color: rgba(var(--color-pessoas), 0.4) !important;
+}
+
+.map-column-postit {
+  margin: 0 !important;
+}
+
+.map-postit {
+  min-height: 50px !important;
+  user-select: none !important;
+  padding: 4px 15px;
+  margin: 3px !important;
+  color: white !important;
+  border-radius: 25px;
+}
+
+.map-postit-estrategia-defined {
+  width: 15.8%;
+}
+
+.map-postit-estrategia-available {
+  height: 90%;
+}
+
+.map-postit-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.map-postit-estrategia-text {
+  text-align: center !important;
+  vertical-align: middle !important;
+  margin: auto !important;
+}
+
+.map-postit-financeiro {
+  background-color: rgb(var(--color-financeiro)) !important;
+}
+
+.map-postit-comercial {
+  background-color: rgb(var(--color-comercial)) !important;
+}
+
+.map-postit-processos {
+  background-color: rgb(var(--color-processos)) !important;
+}
+
+.map-postit-pessoas {
+  background-color: rgb(var(--color-pessoas)) !important;
+}
+

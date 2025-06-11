@@ -1,0 +1,29 @@
+version: 0.2
+
+env:
+  variables:
+    SERVICE: "ui"
+    PROJECT_NAME: "icon-app"
+    STAGE: "qa"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    on-failure: ABORT
+    commands:
+      - export BUILD_DIR=$(pwd)
+      - export SERVICE_DIR=$BUILD_DIR/$PROJECT_NAME-$SERVICE
+      - npm install -g serverless@3.34.0
+      - cd $SERVICE_DIR && npm install --no-optional --legacy-peer-deps
+  build:
+    on-failure: ABORT
+    commands:
+      - cd $SERVICE_DIR
+      - npm run build-$STAGE
+  post_build:
+    on-failure: ABORT
+    commands:
+      - cd $SERVICE_DIR
+      - SLS_DEBUG=* serverless deploy --verbose --region sa-east-1 --stage $STAGE
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFROUNT_DIST_ID --paths "/*"

@@ -1,0 +1,13 @@
+pessoas:
+  handler: functions/metas.main
+  events:
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):metas}/pessoas/{categoria}/definicao
+        method: get
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):metas}/pessoas/{categoria}/definicao
+        method: post
+        

@@ -1,0 +1,53 @@
+graficos: ${file(resources/metas/grafico.yml):graficos}
+
+financeiro_faturamento: ${file(resources/metas/financeiro.yml):faturamento}
+
+financeiro_rentabilidade: ${file(resources/metas/financeiro.yml):rentabilidade}
+
+financeiro_custo: ${file(resources/metas/financeiro.yml):custos}
+
+financeiro_orcamento: ${file(resources/metas/financeiro.yml):orcamento}
+
+financeiro_endividamento: ${file(resources/metas/financeiro.yml):endividamento}
+
+comercial: ${file(resources/metas/comercial.yml):comercial}
+
+processos: ${file(resources/metas/processos.yml):processos}
+
+pessoas: ${file(resources/metas/pessoas.yml):pessoas}
+
+mapa_estrategico: ${file(resources/metas/mapa_estrategico.yml):mapa_estrategico}
+
+diretrizes_grafico: ${file(resources/diretrizes/grafico.yml):graficos}
+
+diretrizes_estrategias:
+  handler: functions/diretrizes.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diretrizes/{categoria}/grafico
+        method: get
+        
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diretrizes/{categoria}/listar
+        method: get
+        
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diretrizes/{categoria}/salvar
+        method: post
+        
+
+diretrizes_tarefas: ${file(resources/diretrizes/tarefas.yml):diretrizes_tarefas}
+
+diretrizes_eficiencia:
+  handler: functions/diretrizes.main
+  events:
+    - http:
+        cors: true
+        path: api/gestao/{companyId}/diretrizes/{categoria}/resumo
+        method: get
+        
+
+diretrizes_eficacia: ${file(resources/diretrizes/eficacia.yml):diretrizes_eficacia}

@@ -1,0 +1,29 @@
+Resources:
+  SimbiosDREIntegrationTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.tableReportCall}
+      AttributeDefinitions:
+        - AttributeName: req_id
+          AttributeType: S
+        - AttributeName: company_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: req_id
+          KeyType: HASH
+        - AttributeName: company_id
+          KeyType: RANGE
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
+      TimeToLiveSpecification:
+        AttributeName: expires_at
+        Enabled: true        
+      # Set the capacity to auto-scale
+      BillingMode: PAY_PER_REQUEST
+      GlobalSecondaryIndexes:
+        - IndexName: company-index
+          KeySchema:
+            - AttributeName: company_id
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL

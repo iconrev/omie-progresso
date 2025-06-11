@@ -1,0 +1,43 @@
+diretrizes_eficacia:
+  handler: functions/diretrizes.main
+  events:
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/graficos
+        method: get
+
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/dre
+        method: get
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/dre
+        method: post
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/levantamento
+        method: get
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/levantamento
+        method: post
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/dashboard
+        method: get
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/dashboard/meta
+        method: post
+        
+    - http:
+        cors: true
+        path: ${file(resources/base_url.yml):diretrizes}/{categoria}/dashboard/meta/reset
+        method: get
+        

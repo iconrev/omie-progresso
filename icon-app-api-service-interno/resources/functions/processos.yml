@@ -1,0 +1,32 @@
+handler: functions/processos.main
+events:
+  - http: #atualizado
+      path: api/gestao/{companyId}/diagnostico/interno/processos/gauge
+      method: get
+      cors: true
+      
+  - http: #atualizado
+      path: api/gestao/{companyId}/diagnostico/interno/processos/avaliacao
+      method: get
+      cors: true
+      
+  - http: #atualizado
+      path: api/gestao/{companyId}/diagnostico/interno/processos/dados
+      method: get
+      cors: true
+      
+  - http: #atualizado
+      path: api/gestao/{companyId}/diagnostico/interno/processos/dados
+      method: post
+      cors: true
+      
+  - http: #atualizado
+      path: api/gestao/{companyId}/diagnostico/interno/processos/avaliacao
+      method: post
+      cors: true
+      
+  - http:
+      cors: true
+      path: api/gestao/diagnostico/interno/processos/empresa/{companyId}/detalhes # generico
+      method: get
+      
