@@ -21,7 +21,7 @@ class IconAPI {
 			if (this.service === "metas") return configApiIcon.baseURLmetas + "/qa-local/api/" + path;
 			return configApiIcon.baseURL + "/qa-local/api/" + path;
 		}
-		return configApiIcon.baseURL + "/api/" + path;
+		return this.service + "/" + path;
 	};
 
 	post = async (path, reqData) => {

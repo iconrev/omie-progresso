@@ -21,7 +21,7 @@ const configs = {
 const configApiIcon = configs[stage];
 
 const apiIcon = axios.create({
-	baseURL: configApiIcon.baseURL,
+	// baseURL: configApiIcon.baseURL,
 });
 
 function getUrlRefreshTokenStage() {

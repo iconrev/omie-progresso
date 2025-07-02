@@ -2,7 +2,7 @@ import IconAPI from "./api";
 
 class ApiBase extends IconAPI {
 	constructor() {
-		super("service-base");
+		super("https://jqkxgseqqf.execute-api.sa-east-1.amazonaws.com/qa-r");
 	}
 }
 
